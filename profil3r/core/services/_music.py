@@ -2,13 +2,13 @@ from profil3r.modules.music.soundcloud import Soundcloud
 from profil3r.modules.music.spotify import Spotify
 
 # Soundcloud
-def soundcloud(self):
+def soundcloud(self, verbose=True):
     self.result["soundcloud"] = Soundcloud(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("soundcloud")
+    if verbose: self.print_results("soundcloud")
 
 # Soundcloud
-def spotify(self):
+def spotify(self, verbose=True):
     self.result["spotify"] = Spotify(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("spotify")
+    if verbose: self.print_results("spotify")

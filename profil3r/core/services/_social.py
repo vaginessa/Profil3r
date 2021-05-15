@@ -7,43 +7,43 @@ from profil3r.modules.social.linktree import LinkTree
 from profil3r.modules.social.myspace import MySpace
 
 # Facebook
-def facebook(self):
+def facebook(self, verbose=True):
     self.result["facebook"] = Facebook(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("facebook")
+    if verbose: self.print_results("facebook")
 
 # Twitter
-def twitter(self):
+def twitter(self, verbose=True):
     self.result["twitter"] = Twitter(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("twitter")
+    if verbose: self.print_results("twitter")
 
 # TikTok
-def tiktok(self):
+def tiktok(self, verbose=True):
     self.result["tiktok"] = TikTok(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("tiktok")
+    if verbose: self.print_results("tiktok")
 
 # Instagram
-def instagram(self):
+def instagram(self, verbose=True):
     self.result["instagram"] = Instagram(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("instagram")
+    if verbose: self.print_results("instagram")
 
 # Pinterest
-def pinterest(self):
+def pinterest(self, verbose=True):
     self.result["pinterest"] = Pinterest(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("pinterest")
+    if verbose: self.print_results("pinterest")
 
 # LinkTree
-def linktree(self):
+def linktree(self, verbose=True):
     self.result["linktree"] = LinkTree(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("linktree")
+    if verbose: self.print_results("linktree")
 
 # MySpace
-def myspace(self):
+def myspace(self, verbose=True):
     self.result["myspace"] = MySpace(self.CONFIG, self.permutations_list).search()
     # print results
-    self.print_results("myspace")
+    if verbose: self.print_results("myspace")

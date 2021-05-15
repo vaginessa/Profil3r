@@ -11,6 +11,7 @@ class Core(object):
     from ._modules import modules_update, get_report_modules
     from ._logo import print_logo
     from ._argparse import parse_arguments
+    from ._api import api
     
     from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace
     from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto
@@ -28,6 +29,9 @@ class Core(object):
 
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
+
+        # Using web interface (false by default)
+        self.web_interface = False
 
         self.separators = []
         self.result = {}

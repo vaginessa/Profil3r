@@ -2,13 +2,13 @@ from profil3r.modules.entertainment.dailymotion import Dailymotion
 from profil3r.modules.entertainment.vimeo import Vimeo
 
 # Dailymotion
-def dailymotion(self):
+def dailymotion(self, verbose=True):
     self.result["dailymotion"] = Dailymotion(self.CONFIG, self.permutations_list).search() 
     # print results
-    self.print_results("dailymotion")
+    if verbose: self.print_results("dailymotion")
 
 # Vimeo
-def vimeo(self):
+def vimeo(self, verbose=True):
     self.result["vimeo"] = Vimeo(self.CONFIG, self.permutations_list).search() 
     # print results
-    self.print_results("vimeo")
+    if verbose: self.print_results("vimeo")
