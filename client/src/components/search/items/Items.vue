@@ -1,6 +1,5 @@
 <template>
-  <div class="items">
-    <div class="rounded bg-white shadow max-w-md mx-auto p-3">
+  <div class="items border-r px-8">
       <div class="relative flex w-full flex-wrap items-stretch mb-3">
         <input type="text" 
                placeholder="Items... e.g. 'john doe'" 
@@ -22,7 +21,6 @@
             v-bind:value="item"
             @remove="removeItem(index)"
       />
-    </div>
   </div>
 </template>
 

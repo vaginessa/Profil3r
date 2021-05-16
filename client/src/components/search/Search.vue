@@ -1,10 +1,10 @@
 <template>
-  <div class="search">
-  <div class="grid grid-cols-3 gap-4 p-6">
-    <Items/>
-    <Separators/>
-    <Services/>
-  </div>
+  <div class="search p-6 bg-white shadow mx-16 my-4">
+    <div class="grid grid-cols-3 gap-4">
+      <Items/>
+      <Separators/>
+      <Services/>
+    </div>
   </div>
 </template>
 
