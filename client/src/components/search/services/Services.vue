@@ -9,6 +9,7 @@
           >
               <option v-for="service in category" 
                       :key="service"
+                      v-bind:value="service.value"
               >{{ service.name }}
               </option>
           </optgroup>

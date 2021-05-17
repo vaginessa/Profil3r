@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import threading
 
 def api(self):
     # create the Flask app
     app = Flask(__name__)
     app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+    CORS(app)
 
     @app.route('/search/<profile>', methods = ['POST'])
     def search(profile):
