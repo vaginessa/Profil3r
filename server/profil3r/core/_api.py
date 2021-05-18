@@ -11,7 +11,7 @@ def api(self):
     @app.route('/search/<profile>', methods = ['POST'])
     def search(profile):
         # results inititialization
-        self.result = {}
+        self.__init__(self.config_path)
 
         # parameters : items, separators and modules
         self.items = profile.split(" ")
@@ -29,4 +29,5 @@ def api(self):
 
         return jsonify(self.result)
 
+    # Run the API on port 8081
     app.run(port=8081)

@@ -1,22 +1,23 @@
 <template>
-  <span class="inline-flex items-center justify-center px-2 py-1 mx-1 text-xs font-bold leading-none text-white bg-blue-500 rounded">{{ value }} &nbsp;
-    <span class="cursor-pointer"
-          @click="$emit('remove')">x
+    <!-- Item -->
+    <span class="inline-flex items-center justify-center px-2 py-1 mx-1 text-xs font-bold leading-none text-white bg-blue-500 rounded">{{ value }} &nbsp;
+        <span class="cursor-pointer"
+              @click="$emit('remove')">x
+        </span>
     </span>
-  </span>
 </template>
 
 <script>
 export default {
-  name: 'Item',
-  data: function() {
-    return {
+    name: 'Item',
+    data: function() {
+        return {
 
+        }
+    },
+    props: {
+        value: String
     }
-  },
-  props: {
-    value: String
-  }
 }
 </script>
 

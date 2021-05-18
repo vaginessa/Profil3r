@@ -30,6 +30,8 @@ class Core(object):
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
 
+        self.config_path = config_path
+
         # Using web interface (false by default)
         self.web_interface = False
 
