@@ -128,6 +128,12 @@ sudo python3 setup.py install
 |---------------|------------------|
 | Gaming        | No               |
 
+#### 📰 Medias
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Medium        | No               |
+
 
 ## Report
 

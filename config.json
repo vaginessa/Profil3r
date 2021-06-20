@@ -215,6 +215,12 @@
             "format": "https://steamcommunity.com/id/{permutation}",
             "type": "gaming",
             "enabled": "yes"
+        },
+        "medium": {
+            "rate_limit": 1000,
+            "format": "https://{permutation}.medium.com",
+            "type": "medias",
+            "enabled": "yes"
         }
     }
 }
