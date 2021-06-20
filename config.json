@@ -203,6 +203,12 @@
             "format": "https://www.lesswrong.com/users/{permutation}",
             "type": "forum",
             "enabled": "yes"
+        },
+        "wordpress": {
+            "rate_limit": 1000,
+            "format": "https://{permutation}.wordpress.com",
+            "type": "hosting",
+            "enabled": "yes"
         }
     }
 }

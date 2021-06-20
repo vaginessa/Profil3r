@@ -21,7 +21,7 @@ class Core(object):
     from .services._email import email
     from .services._porn import pornhub, redtube, xvideos
     from .services._money import buymeacoffee, patreon
-    from .services._hosting import aboutme
+    from .services._hosting import aboutme, wordpress
     from .services._domain import domain
 
     def __init__(self, config_path):
@@ -73,6 +73,7 @@ class Core(object):
             "patreon":           {"method" : self.patreon},
             # Hosting
             "aboutme":           {"method" : self.aboutme},
+            "wordpress":         {"method" : self.wordpress},
             # Domain
             "domain":            {"method" : self.domain}
         }
