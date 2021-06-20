@@ -60,6 +60,7 @@ sudo python3 setup.py install
 | Linktr.ee   | Yes ✔️            |
 | MySpace     | Yes ✔️            |
 | Flickr      | Yes ✔️            |
+| DeviantArt  | No               |
 
 #### 🎵 Music
 

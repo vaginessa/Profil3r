@@ -17,7 +17,7 @@ class Core(object):
     from .services._programming import github, pastebin, replit
     from .services._tchat import skype
     from .services._music import soundcloud, spotify, smule
-    from .services._entertainment import dailymotion, vimeo
+    from .services._entertainment import dailymotion, vimeo, deviantart
     from .services._email import email
     from .services._porn import pornhub, redtube, xvideos
     from .services._money import buymeacoffee, patreon
@@ -27,7 +27,7 @@ class Core(object):
     from .services._medias import medium
 
     def __init__(self, config_path):
-        self.version = "1.3.13"
+        self.version = "1.3.14"
 
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
@@ -66,6 +66,7 @@ class Core(object):
             # Entertainment
             "dailymotion":       {"method" : self.dailymotion},
             "vimeo":             {"method" : self.vimeo},   
+            "deviantart":        {"method" : self.deviantart},   
             # Porn 
             "pornhub":           {"method" : self.pornhub},
             "redtube":           {"method" : self.redtube},

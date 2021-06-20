@@ -221,6 +221,12 @@
             "format": "https://{permutation}.medium.com",
             "type": "medias",
             "enabled": "yes"
+        },
+        "deviantart": {
+            "rate_limit": 1000,
+            "format": "https://www.deviantart.com/{permutation}",
+            "type": "entertainment",
+            "enabled": "yes"
         }
     }
 }
