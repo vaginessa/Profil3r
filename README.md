@@ -122,6 +122,13 @@ sudo python3 setup.py install
 | AboutMe       | Yes ✔            |
 | WordPress     | No               |
 
+#### 🎮 Gaming 
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Gaming        | No               |
+
+
 ## Report
 
 #### JSON

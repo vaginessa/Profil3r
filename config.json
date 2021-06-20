@@ -209,6 +209,12 @@
             "format": "https://{permutation}.wordpress.com",
             "type": "hosting",
             "enabled": "yes"
+        },
+        "steam": {
+            "rate_limit": 1000,
+            "format": "https://steamcommunity.com/id/{permutation}",
+            "type": "gaming",
+            "enabled": "yes"
         }
     }
 }

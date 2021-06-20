@@ -23,9 +23,10 @@ class Core(object):
     from .services._money import buymeacoffee, patreon
     from .services._hosting import aboutme, wordpress
     from .services._domain import domain
+    from .services._gaming import steam
 
     def __init__(self, config_path):
-        self.version = "1.3.11"
+        self.version = "1.3.12"
 
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
@@ -75,5 +76,7 @@ class Core(object):
             "aboutme":           {"method" : self.aboutme},
             "wordpress":         {"method" : self.wordpress},
             # Domain
-            "domain":            {"method" : self.domain}
+            "domain":            {"method" : self.domain},
+            # Gaming
+            "steam":             {"method" : self.steam}
         }
