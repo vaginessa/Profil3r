@@ -12,7 +12,7 @@ class Core(object):
     from ._logo import print_logo
     from ._argparse import parse_arguments
     
-    from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr
+    from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr, goodread
     from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto, lesswrong
     from .services._programming import github, pastebin, replit
     from .services._tchat import skype
@@ -27,7 +27,7 @@ class Core(object):
     from .services._medias import medium
 
     def __init__(self, config_path):
-        self.version = "1.3.14"
+        self.version = "1.3.15"
 
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
@@ -47,6 +47,7 @@ class Core(object):
             "linktree":          {"method" : self.linktree},
             "myspace":           {"method" : self.myspace},
             "flickr":            {"method" : self.flickr},
+            "goodread":          {"method" : self.goodread},
             # Music
             "soundcloud":        {"method" : self.soundcloud},
             "spotify":           {"method" : self.spotify},

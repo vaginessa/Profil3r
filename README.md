@@ -61,6 +61,7 @@ sudo python3 setup.py install
 | MySpace     | Yes ✔️            |
 | Flickr      | Yes ✔️            |
 | DeviantArt  | No               |
+| GoodReads   | No               |
 
 #### 🎵 Music
 

@@ -233,6 +233,12 @@
             "format": "https://slideshare.net/{permutation}",
             "type": "hosting",
             "enabled": "yes"
+        },
+        "goodread": {
+            "rate_limit": 1000,
+            "format": "https://www.goodreads.com/{permutation}",
+            "type": "social",
+            "enabled": "yes"
         }
     }
 }

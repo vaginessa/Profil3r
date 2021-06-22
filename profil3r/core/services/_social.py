@@ -6,6 +6,7 @@ from profil3r.modules.social.pinterest import Pinterest
 from profil3r.modules.social.linktree import LinkTree
 from profil3r.modules.social.myspace import MySpace
 from profil3r.modules.social.flickr import Flickr
+from profil3r.modules.social.goodread import GoodRead
 
 # Facebook
 def facebook(self):
@@ -54,3 +55,9 @@ def flickr(self):
     self.result["flickr"] = Flickr(self.CONFIG, self.permutations_list).search()
     # print results
     self.print_results("flickr")
+
+# GoodRead
+def goodread(self):
+    self.result["goodread"] = GoodRead(self.CONFIG, self.permutations_list).search()
+    # print results
+    self.print_results("goodread")
