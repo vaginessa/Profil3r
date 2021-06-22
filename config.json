@@ -227,6 +227,12 @@
             "format": "https://www.deviantart.com/{permutation}",
             "type": "entertainment",
             "enabled": "yes"
+        },
+        "slideshare": {
+            "rate_limit": 1000,
+            "format": "https://slideshare.net/{permutation}",
+            "type": "hosting",
+            "enabled": "yes"
         }
     }
 }

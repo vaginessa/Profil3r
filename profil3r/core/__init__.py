@@ -21,7 +21,7 @@ class Core(object):
     from .services._email import email
     from .services._porn import pornhub, redtube, xvideos
     from .services._money import buymeacoffee, patreon
-    from .services._hosting import aboutme, wordpress
+    from .services._hosting import aboutme, wordpress, slideshare
     from .services._domain import domain
     from .services._gaming import steam
     from .services._medias import medium
@@ -77,6 +77,7 @@ class Core(object):
             # Hosting
             "aboutme":           {"method" : self.aboutme},
             "wordpress":         {"method" : self.wordpress},
+            "slideshare":        {"method" : self.slideshare},
             # Domain
             "domain":            {"method" : self.domain},
             # Gaming
