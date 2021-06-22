@@ -27,7 +27,7 @@ class Core(object):
     from .services._medias import medium
 
     def __init__(self, config_path):
-        self.version = "1.3.15"
+        self.version = "1.3.16"
 
         with open(config_path, 'r') as f:
             self.CONFIG = json.load(f)
