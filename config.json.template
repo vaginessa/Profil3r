@@ -239,6 +239,12 @@
             "format": "https://www.goodreads.com/{permutation}",
             "type": "social",
             "enabled": "yes"
+        },
+        "tripadvisor": {
+            "rate_limit": 1000,
+            "format": "https://www.tripadvisor.com/Profile/{permutation}",
+            "type": "travel",
+            "enabled": "yes"
         }
     }
 }

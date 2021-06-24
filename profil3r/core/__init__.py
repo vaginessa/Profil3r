@@ -26,10 +26,11 @@ class Core(object):
     from .services._domain import domain
     from .services._gaming import steam
     from .services._medias import medium
+    from .services._travel import tripadvisor
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.3.16"        
+        self.version = "1.3.18"        
         self.separators = []
         self.result = {}
         self.permutations_list = []
@@ -83,5 +84,7 @@ class Core(object):
             # Gaming
             "steam":             {"method" : self.steam},
             # Medias
-            "medium":            {"method" : self.medium}
+            "medium":            {"method" : self.medium},
+            # Travel
+            "tripadvisor":       {"method" : self.tripadvisor}
         }

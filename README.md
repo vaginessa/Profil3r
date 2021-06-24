@@ -137,6 +137,12 @@ sudo python3 setup.py install
 |---------------|------------------|
 | Medium        | No               |
 
+#### ✈️ Travel
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| TripAdvisor   | No               |
+
 
 ## Report
 
