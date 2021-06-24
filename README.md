@@ -143,6 +143,12 @@ sudo python3 setup.py install
 |---------------|------------------|
 | TripAdvisor   | No               |
 
+#### 👥 Collaborative
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Wikipedia     | No               |
+
 
 ## Report
 

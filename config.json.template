@@ -245,6 +245,12 @@
             "format": "https://www.tripadvisor.com/Profile/{permutation}",
             "type": "travel",
             "enabled": "yes"
+        },
+        "wikipedia": {
+            "rate_limit": 1000,
+            "format": "https://en.wikipedia.org/wiki/User:{permutation}",
+            "type": "collaborative",
+            "enabled": "yes"
         }
     }
 }

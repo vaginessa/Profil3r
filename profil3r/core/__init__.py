@@ -27,10 +27,11 @@ class Core(object):
     from .services._gaming import steam
     from .services._medias import medium
     from .services._travel import tripadvisor
+    from .services._collaborative import wikipedia
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.3.18"        
+        self.version = "1.3.19"        
         self.separators = []
         self.result = {}
         self.permutations_list = []
@@ -86,5 +87,7 @@ class Core(object):
             # Medias
             "medium":            {"method" : self.medium},
             # Travel
-            "tripadvisor":       {"method" : self.tripadvisor}
+            "tripadvisor":       {"method" : self.tripadvisor},
+            # Collaborative
+            "wikipedia":         {"method" : self.wikipedia}
         }
