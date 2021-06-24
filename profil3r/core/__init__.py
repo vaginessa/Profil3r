@@ -11,6 +11,7 @@ class Core(object):
     from ._modules import modules_update, get_report_modules
     from ._logo import print_logo
     from ._argparse import parse_arguments
+    from ._config import load_config
     
     from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr, goodread
     from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto, lesswrong
@@ -27,14 +28,12 @@ class Core(object):
     from .services._medias import medium
 
     def __init__(self, config_path):
-        self.version = "1.3.16"
-
-        with open(config_path, 'r') as f:
-            self.CONFIG = json.load(f)
-
+        self.config_path = config_path
+        self.version = "1.3.16"        
         self.separators = []
         self.result = {}
         self.permutations_list = []
+        
         self.modules = {
             # Emails
             "email":             {"method" : self.email },

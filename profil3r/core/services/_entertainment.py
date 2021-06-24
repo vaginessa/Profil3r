@@ -4,18 +4,18 @@ from profil3r.modules.entertainment.deviantart import DeviantArt
 
 # Dailymotion
 def dailymotion(self):
-    self.result["dailymotion"] = Dailymotion(self.CONFIG, self.permutations_list).search() 
+    self.result["dailymotion"] = Dailymotion(self.config, self.permutations_list).search() 
     # print results
     self.print_results("dailymotion")
 
 # Vimeo
 def vimeo(self):
-    self.result["vimeo"] = Vimeo(self.CONFIG, self.permutations_list).search() 
+    self.result["vimeo"] = Vimeo(self.config, self.permutations_list).search() 
     # print results
     self.print_results("vimeo")
 
 # DeviantArt
 def deviantart(self):
-    self.result["deviantart"] = DeviantArt(self.CONFIG, self.permutations_list).search() 
+    self.result["deviantart"] = DeviantArt(self.config, self.permutations_list).search() 
     # print results
     self.print_results("deviantart")

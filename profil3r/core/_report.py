@@ -13,9 +13,9 @@ def generate_json_report(self):
     if not os.path.exists('reports/json'):
         os.makedirs('reports/json')
 
-    separators = [value for key, value in self.CONFIG["separators"].items()]
+    separators = [value for key, value in self.config["separators"].items()]
 
-    file_name = self.CONFIG["json_report_path"].format("_".join([item for item in self.items if item not in separators]))
+    file_name = self.config["json_report_path"].format("_".join([item for item in self.items if item not in separators]))
     try:
         with open(file_name, 'w') as fp:
             json.dump(self.result, fp, indent=2)
@@ -32,7 +32,7 @@ def generate_HTML_report(self):
     if not os.path.exists('reports/html'):
         os.makedirs('reports/html')
 
-    separators = [value for key, value in self.CONFIG["separators"].items()]
+    separators = [value for key, value in self.config["separators"].items()]
 
     dirname = os.path.dirname(__file__)
     html_content = open(os.path.join(dirname, './ressources/report.tpl')).read()
@@ -48,7 +48,7 @@ def generate_HTML_report(self):
         script = js_content
     )
 
-    file_name = self.CONFIG["html_report_path"].format("_".join([item for item in self.items if item not in separators]))
+    file_name = self.config["html_report_path"].format("_".join([item for item in self.items if item not in separators]))
     try:
         with open(file_name, 'w') as fp:
             fp.write(html_report)
@@ -65,9 +65,9 @@ def generate_csv_report(self):
     if not os.path.exists('reports/csv'):
         os.makedirs('reports/csv')
 
-    separators = [value for key, value in self.CONFIG["separators"].items()]
+    separators = [value for key, value in self.config["separators"].items()]
 
-    file_name = self.CONFIG["csv_report_path"].format("_".join([item for item in self.items if item not in separators]))
+    file_name = self.config["csv_report_path"].format("_".join([item for item in self.items if item not in separators]))
     try:
         with open(file_name, 'w', newline='') as fp:
             writer = csv.writer(fp)

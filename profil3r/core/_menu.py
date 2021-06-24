@@ -6,7 +6,7 @@ def menu(self):
     # Separators
 
     # Get a list of all existing separators
-    separators = self.CONFIG["separators"]
+    separators = self.config["separators"]
 
     separators_menu = [
         {
@@ -29,9 +29,9 @@ def menu(self):
     # Services
 
     # Get a list of all enabled modules
-    modules_list = sorted([module for module in self.CONFIG["plateform"] if self.CONFIG["plateform"][module]["enabled"] == "yes"])
+    modules_list = sorted([module for module in self.config["plateform"] if self.config["plateform"][module]["enabled"] == "yes"])
     # Create a list of all existing categories
-    categories = sorted(list(set([content["type"] for module, content in self.CONFIG["plateform"].items() if module in modules_list])))    
+    categories = sorted(list(set([content["type"] for module, content in self.config["plateform"].items() if module in modules_list])))    
     
     services_menu = [
         {
@@ -52,12 +52,12 @@ def menu(self):
         services_menu[0]["choices"].append(Separator(category.upper()))
         # Append category items
         for module in modules_list: 
-            if self.CONFIG["plateform"][module]["type"] == category:
+            if self.config["plateform"][module]["type"] == category:
                 services_menu[0]["choices"].append(
                     {
                         'name': module,
                         # Checked by default
-                        'checked': module in self.CONFIG["report_elements"]
+                        'checked': module in self.config["report_elements"]
                     })
     
     modules = prompt(services_menu)["modules"]

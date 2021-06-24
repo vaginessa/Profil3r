@@ -1,6 +1,9 @@
 # Profil3r JSON reports
 reports/
 
+# configuration file
+config.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

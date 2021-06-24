@@ -2,6 +2,7 @@ from profil3r.core.colors import Colors
 import threading
 
 def run(self):
+    self.load_config()
     self.print_logo()
     # Get arguments from the command line
     self.parse_arguments()
