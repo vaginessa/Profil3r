@@ -31,7 +31,7 @@ class Core(object):
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.3.19"        
+        self.version = "1.4.0"        
         self.separators = []
         self.result = {}
         self.permutations_list = []

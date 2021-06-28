@@ -14,6 +14,8 @@
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#report">Report</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#usage">Usage</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#contact">Contact</a>
 </p>
 
@@ -26,18 +28,12 @@ Profil3r is an [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) t
 
 ## Installation
 
-Install PyInquirer, jinja2 and bs4 :
-
-```bash
-pip3 install PyInquirer jinja2 bs4
-``` 
-
 Install Profil3r :
 
 ```bash
 git clone https://github.com/Rog3rSm1th/Profil3r.git
 cd Profil3r/
-sudo python3 setup.py install
+sudo pip3 install -r requirements.txt
 ```
 ## Features
 
@@ -177,6 +173,17 @@ You can modify the paths of the reports, the separators and the services Profil3
 | html_report_path | String | `"./reports/html/{}.html"` | The path of the report's HTML file, this path must include a {} which corresponds to the file name |
 | csv_report_path | String | `"./reports/csv/{}.csv"` | The path of the report's CSV file, this path must include a {} which corresponds to the file name |
 separators |Object|`{"Dot": ".", "Dash": "-", "Underscore": "_"}`| List of separators to separate items, for example: `john.doe`, `john-doe`, `john_doe`|
+
+## Usage 
+
+```
+usage: profil3r.py [-h] -p PROFILE [PROFILE ...]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROFILE [PROFILE ...], --profile PROFILE [PROFILE ...]
+                        parts of the username that you are looking for, e.g. : john doe
+```
 
 ## 📚 Example
 

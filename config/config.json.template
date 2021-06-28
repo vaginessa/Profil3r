@@ -1,5 +1,4 @@
 {
-    "config_path": "./config.json",
     "separators": {
         "Dot": ".",
         "Dash": "-",

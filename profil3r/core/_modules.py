@@ -8,7 +8,7 @@ def modules_update(self, modules):
     new_config["report_elements"] = modules
 
     try:
-        with open(self.config["config_path"], 'w') as fp:
+        with open(self.config_path, 'w') as fp:
             json.dump(new_config, fp, indent=4)
     except Exception as e:
         print(e)
