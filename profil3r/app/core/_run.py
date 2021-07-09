@@ -21,4 +21,6 @@ def run(self):
         thread = threading.Thread(target=self.modules[module]["method"])
         thread.start()
         thread.join()
-    self.generate_report()
+    
+    if self.report_path:
+        self.generate_report()
