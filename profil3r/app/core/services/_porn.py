@@ -1,6 +1,6 @@
-from app.modules.porn.pornhub import Pornhub
-from app.modules.porn.redtube import Redtube
-from app.modules.porn.xvideos import XVideos
+from profil3r.app.modules.porn.pornhub import Pornhub
+from profil3r.app.modules.porn.redtube import Redtube
+from profil3r.app.modules.porn.xvideos import XVideos
 
 # Pornhub
 def pornhub(self):

@@ -1,6 +1,6 @@
-from app.modules.music.soundcloud import Soundcloud
-from app.modules.music.spotify import Spotify
-from app.modules.music.smule import Smule
+from profil3r.app.modules.music.soundcloud import Soundcloud
+from profil3r.app.modules.music.spotify import Spotify
+from profil3r.app.modules.music.smule import Smule
 
 # Soundcloud
 def soundcloud(self):

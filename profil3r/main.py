@@ -1,4 +1,4 @@
-from app.core import Core
+from profil3r.app.core import Core
 
 def main():
     CONFIG = './profil3r/config/config.json'

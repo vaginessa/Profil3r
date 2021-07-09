@@ -1,6 +1,6 @@
-from app.modules.programming.github import Github
-from app.modules.programming.pastebin import Pastebin
-from app.modules.programming.replit import Replit
+from profil3r.app.modules.programming.github import Github
+from profil3r.app.modules.programming.pastebin import Pastebin
+from profil3r.app.modules.programming.replit import Replit
 
 # Github
 def github(self):

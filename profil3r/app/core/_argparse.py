@@ -13,4 +13,4 @@ def parse_arguments(self):
     # Items passed from the command line
     self.items = args.profile
     # Report path passed from the command line
-    self.report_path = args.report
+    self.report_path = args.report.rstrip('/') if args.report is not None else args.report

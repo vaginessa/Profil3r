@@ -1,5 +1,5 @@
-from app.modules.money.buymeacoffee import BuyMeACoffee
-from app.modules.money.patreon import Patreon
+from profil3r.app.modules.money.buymeacoffee import BuyMeACoffee
+from profil3r.app.modules.money.patreon import Patreon
 
 # BuyMeACoffee
 def buymeacoffee(self):

@@ -1,4 +1,4 @@
-from app.modules.collaborative.wikipedia import Wikipedia
+from profil3r.app.modules.collaborative.wikipedia import Wikipedia
 
 # Wikipedia
 def wikipedia(self):

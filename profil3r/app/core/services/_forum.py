@@ -1,8 +1,8 @@
-from app.modules.forum.zeroxzerozerosec import ZeroxZeroZeroSec
-from app.modules.forum.jeuxvideo import JeuxVideo
-from app.modules.forum.hackernews import Hackernews
-from app.modules.forum.crackedto import CrackedTo
-from app.modules.forum.lesswrong import LessWrong
+from profil3r.app.modules.forum.zeroxzerozerosec import ZeroxZeroZeroSec
+from profil3r.app.modules.forum.jeuxvideo import JeuxVideo
+from profil3r.app.modules.forum.hackernews import Hackernews
+from profil3r.app.modules.forum.crackedto import CrackedTo
+from profil3r.app.modules.forum.lesswrong import LessWrong
 
 # 0x00sec
 def zeroxzerozerosec(self):

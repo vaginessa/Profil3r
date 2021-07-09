@@ -1,4 +1,4 @@
-from app.modules.travel.tripadvisor import TripAdvisor
+from profil3r.app.modules.travel.tripadvisor import TripAdvisor
 
 # TripAdvisor
 def tripadvisor(self):

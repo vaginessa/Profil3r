@@ -1,6 +1,3 @@
-from app.modules.email import email
-import json
-
 class Core(object):
 
     from ._menu import menu
@@ -31,7 +28,7 @@ class Core(object):
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.4.0"        
+        self.version = "1.4.1"        
         self.separators = []
         self.result = {}
         self.permutations_list = []

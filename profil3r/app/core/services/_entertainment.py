@@ -1,6 +1,6 @@
-from app.modules.entertainment.dailymotion import Dailymotion
-from app.modules.entertainment.vimeo import Vimeo
-from app.modules.entertainment.deviantart import DeviantArt
+from profil3r.app.modules.entertainment.dailymotion import Dailymotion
+from profil3r.app.modules.entertainment.vimeo import Vimeo
+from profil3r.app.modules.entertainment.deviantart import DeviantArt
 
 # Dailymotion
 def dailymotion(self):

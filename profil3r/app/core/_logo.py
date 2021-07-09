@@ -1,4 +1,4 @@
-from app.core.colors import Colors
+from profil3r.app.core.colors import Colors
 
 def print_logo(self):
     print(Colors.OKGREEN + Colors.BOLD + '''
