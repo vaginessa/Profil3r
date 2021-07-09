@@ -49,7 +49,7 @@ class Github:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='vcard-fullname')[0].get_text()).strip()
+                    user_full_name = str(soup.find_all(class_='vcard-fullname')[0].get_text()).strip() if soup.find_all(class_='vcard-fullname')[0].get_text().strip() != "" else None
                     user_followers_count = str(soup.find_all(class_='text-bold color-text-primary')[0].get_text().replace(",", "")).strip()
                     user_following_count = str(soup.find_all(class_='text-bold color-text-primary')[1].get_text().replace(",", "")).strip()
                     user_stars_count = str(soup.find_all(class_='text-bold color-text-primary')[2].get_text().replace(",", "")).strip()

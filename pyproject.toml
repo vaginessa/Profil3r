@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "profil3r"
-version = "1.4.2"
+version = "1.4.3"
 description = "Find the profiles of a person on social networks, as well as their email addresses"
 authors = ["Rog3rSm1th <r0g3r5@protonmail.com>"]
 license = "MIT"
@@ -14,7 +14,7 @@ classifiers = [
 include = [
     "LICENSE",
     "profil3r/app/core/ressources/*",
-    "profil3r/config/*"
+    "profil3r/config/config.json.template"
 ]
 
 [tool.poetry.dependencies]
