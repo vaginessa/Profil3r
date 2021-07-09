@@ -1,12 +1,12 @@
-from profil3r.modules.social.facebook import Facebook
-from profil3r.modules.social.twitter import Twitter
-from profil3r.modules.social.tiktok import TikTok
-from profil3r.modules.social.instagram import Instagram
-from profil3r.modules.social.pinterest import Pinterest
-from profil3r.modules.social.linktree import LinkTree
-from profil3r.modules.social.myspace import MySpace
-from profil3r.modules.social.flickr import Flickr
-from profil3r.modules.social.goodread import GoodRead
+from app.modules.social.facebook import Facebook
+from app.modules.social.twitter import Twitter
+from app.modules.social.tiktok import TikTok
+from app.modules.social.instagram import Instagram
+from app.modules.social.pinterest import Pinterest
+from app.modules.social.linktree import LinkTree
+from app.modules.social.myspace import MySpace
+from app.modules.social.flickr import Flickr
+from app.modules.social.goodread import GoodRead
 
 # Facebook
 def facebook(self):

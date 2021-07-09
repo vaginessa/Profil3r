@@ -1,4 +1,4 @@
-from profil3r.modules.email import email
+from app.modules.email import email
 import json
 
 class Core(object):

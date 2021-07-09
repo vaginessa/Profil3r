@@ -1,4 +1,4 @@
-from profil3r.modules.gaming.steam import Steam
+from app.modules.gaming.steam import Steam
 
 # Steam
 def steam(self):

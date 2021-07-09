@@ -1,6 +1,6 @@
-from profil3r.modules.hosting.aboutme import AboutMe
-from profil3r.modules.hosting.wordpress import WordPress
-from profil3r.modules.hosting.slideshare import SlideShare
+from app.modules.hosting.aboutme import AboutMe
+from app.modules.hosting.wordpress import WordPress
+from app.modules.hosting.slideshare import SlideShare
 
 # AboutMe
 def aboutme(self):

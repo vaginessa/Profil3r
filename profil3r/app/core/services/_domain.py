@@ -1,4 +1,4 @@
-from profil3r.modules.domain.domain import Domain
+from app.modules.domain.domain import Domain
 
 # Domain
 def domain(self):

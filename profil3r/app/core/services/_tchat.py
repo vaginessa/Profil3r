@@ -1,4 +1,4 @@
-from profil3r.modules.tchat.skype import Skype
+from app.modules.tchat.skype import Skype
 
 # Skype
 def skype(self):

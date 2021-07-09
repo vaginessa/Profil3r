@@ -1,4 +1,4 @@
-from profil3r.modules.medias.medium import Medium
+from app.modules.medias.medium import Medium
 
 # Medium
 def medium(self):
