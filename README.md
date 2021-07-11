@@ -76,6 +76,8 @@ pip3 install profil3r
 | LessWrong   | Yes ✔️            |
 | Repl.it     | No               |
 | Cracked.to  | No               |
+| PyPi        | Yes ✔️            |
+| NPM         | Yes ✔️            |
 
 #### 💬 Forum
 

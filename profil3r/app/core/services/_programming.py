@@ -2,6 +2,7 @@ from profil3r.app.modules.programming.github import Github
 from profil3r.app.modules.programming.pastebin import Pastebin
 from profil3r.app.modules.programming.replit import Replit
 from profil3r.app.modules.programming.pypi import PyPi
+from profil3r.app.modules.programming.npm import Npm
 
 # Github
 def github(self):
@@ -26,3 +27,9 @@ def pypi(self):
     self.result["pypi"] = PyPi(self.config, self.permutations_list).search() 
     # print results
     self.print_results("pypi")
+
+# Npm
+def npm(self):
+    self.result["npm"] = Npm(self.config, self.permutations_list).search() 
+    # print results
+    self.print_results("npm")

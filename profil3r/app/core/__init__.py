@@ -12,7 +12,7 @@ class Core(object):
     
     from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr, goodread
     from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto, lesswrong
-    from .services._programming import github, pastebin, replit, pypi
+    from .services._programming import github, pastebin, replit, pypi, npm
     from .services._tchat import skype
     from .services._music import soundcloud, spotify, smule
     from .services._entertainment import dailymotion, vimeo, deviantart
@@ -55,6 +55,7 @@ class Core(object):
             "pastebin":          {"method" : self.pastebin},
             "replit":            {"method" : self.replit},
             "pypi":              {"method" : self.pypi},
+            "npm":               {"method" : self.npm},
             # Forums:
             "0x00sec":           {"method" : self.zeroxzerozerosec},
             "jeuxvideo.com":     {"method" : self.jeuxvideo},
