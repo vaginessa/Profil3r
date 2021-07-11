@@ -247,6 +247,18 @@
             "format": "https://en.wikipedia.org/wiki/User:{permutation}",
             "type": "collaborative",
             "enabled": "yes"
+        },
+        "pypi": {
+            "rate_limit": 1000,
+            "format": "https://pypi.org/user/{permutation}",
+            "type": "programming",
+            "enabled": "yes"
+        },
+        "npm": {
+            "rate_limit": 1000,
+            "format": "https://www.npmjs.com/~{permutation}",
+            "type": "programming",
+            "enabled": "yes"
         }
     }
 }
