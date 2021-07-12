@@ -1,6 +1,7 @@
 <p align=center>
   <img src="doc/profil3r_logo.png" width="200" height="200"/>
   <br>
+  <a target="_blank" href="https://discord.gg/TjHfREggZS" title="Python version">Discord 💬</a></br>
   <code>pip3 install profil3r && profil3r --help</code></br></br>
   <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg"></a>
   <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/python-%3E=_3.6-green.svg"></a>
