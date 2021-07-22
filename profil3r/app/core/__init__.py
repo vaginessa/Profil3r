@@ -22,7 +22,7 @@ class Core(object):
     from .services._hosting import aboutme, wordpress, slideshare
     from .services._domain import domain
     from .services._gaming import steam
-    from .services._medias import medium
+    from .services._medias import medium, devto
     from .services._travel import tripadvisor
     from .services._collaborative import wikipedia
     from .services._ctf import rootme
@@ -87,6 +87,7 @@ class Core(object):
             "steam":             {"method" : self.steam},
             # Medias
             "medium":            {"method" : self.medium},
+            "devto":             {"method" : self.devto},
             # Travel
             "tripadvisor":       {"method" : self.tripadvisor},
             # Collaborative

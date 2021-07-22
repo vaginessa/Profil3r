@@ -271,6 +271,12 @@
             "format": "https://asciinema.org/~{permutation}",
             "type": "programming",
             "enabled": "yes"
+        },
+        "devto": {
+            "rate_limit": 1000,
+            "format": "https://dev.to/{permutation}",
+            "type": "medias",
+            "enabled": "yes"
         }
     }
 }
