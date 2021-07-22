@@ -265,6 +265,12 @@
             "format": "https://root-me.org/{permutation}",
             "type": "ctf",
             "enabled": "yes"
+        },
+        "asciinema": {
+            "rate_limit": 1000,
+            "format": "https://asciinema.org/~{permutation}",
+            "type": "programming",
+            "enabled": "yes"
         }
     }
 }

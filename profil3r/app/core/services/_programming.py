@@ -3,6 +3,7 @@ from profil3r.app.modules.programming.pastebin import Pastebin
 from profil3r.app.modules.programming.replit import Replit
 from profil3r.app.modules.programming.pypi import PyPi
 from profil3r.app.modules.programming.npm import Npm
+from profil3r.app.modules.programming.asciinema import Asciinema
 
 # Github
 def github(self):
@@ -33,3 +34,9 @@ def npm(self):
     self.result["npm"] = Npm(self.config, self.permutations_list).search() 
     # print results
     self.print_results("npm")
+
+# Asciinema
+def asciinema(self):
+    self.result["asciinema"] = Asciinema(self.config, self.permutations_list).search() 
+    # print results
+    self.print_results("asciinema")
