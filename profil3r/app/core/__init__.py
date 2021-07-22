@@ -25,10 +25,11 @@ class Core(object):
     from .services._medias import medium
     from .services._travel import tripadvisor
     from .services._collaborative import wikipedia
+    from .services._ctf import rootme
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.4.4"        
+        self.version = "1.4.4" 
         self.separators = []
         self.result = {}
         self.permutations_list = []
@@ -88,5 +89,7 @@ class Core(object):
             # Travel
             "tripadvisor":       {"method" : self.tripadvisor},
             # Collaborative
-            "wikipedia":         {"method" : self.wikipedia}
+            "wikipedia":         {"method" : self.wikipedia},
+            # CTF
+            "rootme":            {"method" : self.rootme}
         }

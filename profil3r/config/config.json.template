@@ -259,6 +259,12 @@
             "format": "https://www.npmjs.com/~{permutation}",
             "type": "programming",
             "enabled": "yes"
+        },
+        "rootme": {
+            "rate_limit": 1000,
+            "format": "https://root-me.org/{permutation}",
+            "type": "ctf",
+            "enabled": "yes"
         }
     }
 }
