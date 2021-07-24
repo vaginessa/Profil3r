@@ -55,7 +55,7 @@ class Twitter:
         for username in possible_usernames_list:
             try:
                 nitter_formatted_URL = nitter_URL.format(username.replace("https://twitter.com/", ""))
-                r = requests.get(nitter_formatted_URL)
+                r = requests.get(nitter_formatted_URL, timeout=5)
             except requests.ConnectionError:
                 print("failed to connect to twitter")
             

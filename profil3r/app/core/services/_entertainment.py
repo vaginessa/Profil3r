@@ -7,15 +7,18 @@ def dailymotion(self):
     self.result["dailymotion"] = Dailymotion(self.config, self.permutations_list).search() 
     # print results
     self.print_results("dailymotion")
+    return self.result["dailymotion"]
 
 # Vimeo
 def vimeo(self):
     self.result["vimeo"] = Vimeo(self.config, self.permutations_list).search() 
     # print results
     self.print_results("vimeo")
+    return self.result["vimeo"]
 
 # DeviantArt
 def deviantart(self):
     self.result["deviantart"] = DeviantArt(self.config, self.permutations_list).search() 
     # print results
     self.print_results("deviantart")
+    return self.result["deviantart"]

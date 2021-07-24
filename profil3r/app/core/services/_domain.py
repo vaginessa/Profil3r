@@ -5,3 +5,4 @@ def domain(self):
     self.result["domain"] = Domain(self.config, self.permutations_list).search()
     # print results
     self.print_results("domain")
+    return self.result["domain"] 

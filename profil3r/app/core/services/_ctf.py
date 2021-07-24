@@ -5,3 +5,4 @@ def rootme(self):
     self.result["rootme"] = RootMe(self.config, self.permutations_list).search()
     # print results
     self.print_results("rootme")
+    return self.result["rootme"]

@@ -162,7 +162,7 @@
             "rate_limit": 1000,
             "format": "https://cracked.to/{permutation}",
             "type": "forum",
-            "enabled": "yes"
+            "enabled": "no"
         },
         "vimeo": {
             "rate_limit": 1000,
@@ -238,9 +238,9 @@
         },
         "tripadvisor": {
             "rate_limit": 1000,
-            "format": "https://www.tripadvisor.com/Profile/{permutation}",
+            "format": "https://tripadvisor.com/Profile/{permutation}",
             "type": "travel",
-            "enabled": "yes"
+            "enabled": "no"
         },
         "wikipedia": {
             "rate_limit": 1000,
