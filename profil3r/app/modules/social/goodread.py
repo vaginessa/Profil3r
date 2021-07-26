@@ -2,7 +2,7 @@ import requests
 import time
 import re
 
-class GoodRead:
+class Goodread:
 
     def __init__(self, config, permutations_list):
         # 1000 ms

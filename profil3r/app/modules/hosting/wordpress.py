@@ -1,7 +1,7 @@
 import requests
 import time
 
-class WordPress:
+class Wordpress:
 
     def __init__(self, config, permutations_list):
         # 1000 ms

@@ -1,12 +1,12 @@
 from profil3r.app.modules.social.facebook import Facebook
 from profil3r.app.modules.social.twitter import Twitter
-from profil3r.app.modules.social.tiktok import TikTok
+from profil3r.app.modules.social.tiktok import Tiktok
 from profil3r.app.modules.social.instagram import Instagram
 from profil3r.app.modules.social.pinterest import Pinterest
-from profil3r.app.modules.social.linktree import LinkTree
-from profil3r.app.modules.social.myspace import MySpace
+from profil3r.app.modules.social.linktree import Linktree
+from profil3r.app.modules.social.myspace import Myspace
 from profil3r.app.modules.social.flickr import Flickr
-from profil3r.app.modules.social.goodread import GoodRead
+from profil3r.app.modules.social.goodread import Goodread
 
 # Facebook
 def facebook(self):
@@ -24,7 +24,7 @@ def twitter(self):
 
 # TikTok
 def tiktok(self):
-    self.result["tiktok"] = TikTok(self.config, self.permutations_list).search()
+    self.result["tiktok"] = Tiktok(self.config, self.permutations_list).search()
     # print results
     self.print_results("tiktok")
     return self.result["tiktok"]
@@ -45,14 +45,14 @@ def pinterest(self):
 
 # LinkTree
 def linktree(self):
-    self.result["linktree"] = LinkTree(self.config, self.permutations_list).search()
+    self.result["linktree"] = Linktree(self.config, self.permutations_list).search()
     # print results
     self.print_results("linktree")
     return self.result["linktree"]
 
 # MySpace
 def myspace(self):
-    self.result["myspace"] = MySpace(self.config, self.permutations_list).search()
+    self.result["myspace"] = Myspace(self.config, self.permutations_list).search()
     # print results
     self.print_results("myspace")
     return self.result["myspace"]
@@ -66,7 +66,7 @@ def flickr(self):
 
 # GoodRead
 def goodread(self):
-    self.result["goodread"] = GoodRead(self.config, self.permutations_list).search()
+    self.result["goodread"] = Goodread(self.config, self.permutations_list).search()
     # print results
     self.print_results("goodread")
     return self.result["goodread"]

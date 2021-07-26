@@ -1,6 +1,6 @@
 from profil3r.app.modules.entertainment.dailymotion import Dailymotion
 from profil3r.app.modules.entertainment.vimeo import Vimeo
-from profil3r.app.modules.entertainment.deviantart import DeviantArt
+from profil3r.app.modules.entertainment.deviantart import Deviantart
 
 # Dailymotion
 def dailymotion(self):
@@ -18,7 +18,7 @@ def vimeo(self):
 
 # DeviantArt
 def deviantart(self):
-    self.result["deviantart"] = DeviantArt(self.config, self.permutations_list).search() 
+    self.result["deviantart"] = Deviantart(self.config, self.permutations_list).search() 
     # print results
     self.print_results("deviantart")
     return self.result["deviantart"]

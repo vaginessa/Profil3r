@@ -171,7 +171,7 @@
             "enabled": "yes"
         },
         "patreon": {
-            "rate_limit": 1000,
+            "rate_limit": 1500,
             "format": "https://www.patreon.com/{permutation}",
             "type": "money",
             "enabled": "yes"
@@ -183,7 +183,7 @@
             "enabled": "yes"
         },
         "smule": {
-            "rate_limit": 1000,
+            "rate_limit": 1500,
             "format": "https://smule.com/{permutation}",
             "type": "music",
             "enabled": "yes"

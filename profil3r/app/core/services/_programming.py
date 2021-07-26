@@ -1,7 +1,7 @@
 from profil3r.app.modules.programming.github import Github
 from profil3r.app.modules.programming.pastebin import Pastebin
 from profil3r.app.modules.programming.replit import Replit
-from profil3r.app.modules.programming.pypi import PyPi
+from profil3r.app.modules.programming.pypi import Pypi
 from profil3r.app.modules.programming.npm import Npm
 from profil3r.app.modules.programming.asciinema import Asciinema
 from profil3r.app.modules.programming.codementor import Codementor
@@ -29,7 +29,7 @@ def replit(self):
 
 # PyPi
 def pypi(self):
-    self.result["pypi"] = PyPi(self.config, self.permutations_list).search() 
+    self.result["pypi"] = Pypi(self.config, self.permutations_list).search() 
     # print results
     self.print_results("pypi")
     return self.result["pypi"]

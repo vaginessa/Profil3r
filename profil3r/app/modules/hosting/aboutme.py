@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-class AboutMe:
+class Aboutme:
 
     def __init__(self, config, permutations_list):
         # 1000 ms

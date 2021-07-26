@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-class DevTo:
+class Devto:
 
     def __init__(self, config, permutations_list):
         # 1000 ms

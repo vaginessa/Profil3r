@@ -1,7 +1,7 @@
 import requests
 import time
 
-class TikTok:
+class Tiktok:
 
     def __init__(self, config, permutations_list):
         # 1000 ms

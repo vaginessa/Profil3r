@@ -1,5 +1,5 @@
 from profil3r.app.modules.medias.medium import Medium
-from profil3r.app.modules.medias.devto import DevTo
+from profil3r.app.modules.medias.devto import Devto
 
 # Medium
 def medium(self):
@@ -10,7 +10,7 @@ def medium(self):
 
 # Dev.to
 def devto(self):
-    self.result["devto"] = DevTo(self.config, self.permutations_list).search()
+    self.result["devto"] = Devto(self.config, self.permutations_list).search()
     # print results
     self.print_results("devto")
     return self.result["devto"]
