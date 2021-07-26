@@ -47,6 +47,19 @@ def test_buymeacoffee_invalid():
     if profil3r.config['plateform']['buymeacoffee']['enabled'] == 'yes':
         assert len(profil3r.buymeacoffee()['accounts']) == 0
 
+# codementor 
+def test_codementor_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['crackedto']['enabled'] == 'yes':
+        assert len(profil3r.crackedto()['accounts']) == 1
+
+def test_codementor_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['crackedto']['enabled'] == 'yes':
+        assert len(profil3r.crackedto()['accounts']) == 0
+
 # crackedto
 def test_crackedto_valid():
     profil3r.permutations_list = ['johndoe']

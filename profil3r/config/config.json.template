@@ -277,6 +277,12 @@
             "format": "https://dev.to/{permutation}",
             "type": "medias",
             "enabled": "yes"
+        },
+        "codementor": {
+            "rate_limit": 1000,
+            "format": "https://www.codementor.io/@{permutation}",
+            "type": "programming",
+            "enabled": "yes"
         }
     }
 }

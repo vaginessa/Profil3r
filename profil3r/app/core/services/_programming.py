@@ -4,6 +4,7 @@ from profil3r.app.modules.programming.replit import Replit
 from profil3r.app.modules.programming.pypi import PyPi
 from profil3r.app.modules.programming.npm import Npm
 from profil3r.app.modules.programming.asciinema import Asciinema
+from profil3r.app.modules.programming.codementor import Codementor
 
 # Github
 def github(self):
@@ -46,3 +47,10 @@ def asciinema(self):
     # print results
     self.print_results("asciinema")
     return self.result["asciinema"]
+
+# Codementor
+def codementor(self):
+    self.result["codementor"] = Codementor(self.config, self.permutations_list).search() 
+    # print results
+    self.print_results("codementor")
+    return self.result["codementor"]
