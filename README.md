@@ -79,6 +79,8 @@ pip3 install profil3r
 | Cracked.to  | No               |
 | PyPi        | Yes ✔️            |
 | NPM         | Yes ✔️            |
+| Asciinema   | No               |
+| CodeMentor  | No               |
 
 #### 💬 Forum
 
@@ -135,6 +137,7 @@ pip3 install profil3r
 |Service        | Profile Scraping |
 |---------------|------------------|
 | Medium        | No               |
+| Dev.to        | No               |
 
 #### ✈️ Travel
 
@@ -148,6 +151,11 @@ pip3 install profil3r
 |---------------|------------------|
 | Wikipedia     | No               |
 
+#### 🏆 CTF
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Root-me       | Yes ✔            |
 
 ## Report
 
