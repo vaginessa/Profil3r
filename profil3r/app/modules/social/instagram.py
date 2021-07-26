@@ -36,7 +36,7 @@ class Instagram:
         for username in possible_usernames_list:
             try:
                 bibliogram_formatted_URL = bibliogram_URL.format(username.replace("https://instagram.com/", ""))
-                r = requests.get(bibliogram_formatted_URL)
+                r = requests.get(bibliogram_formatted_URL, timeout=5)
             except requests.ConnectionError:
                 print("failed to connect to instagram")
             

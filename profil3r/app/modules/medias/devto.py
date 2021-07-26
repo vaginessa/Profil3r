@@ -1,19 +1,19 @@
 import requests
+from bs4 import BeautifulSoup
 import time
 
-class Crackedto:
+class Devto:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['crackedto']['rate_limit'] / 1000
-        # https://cracked.to/{username}
-        self.format = config['plateform']['crackedto']['format']
-        # cracked.to usernames are not case sensitive
+        self.delay = config['plateform']['devto']['rate_limit'] / 1000
+        # https://dev.to/{username}
+        self.format = config['plateform']['devto']['format']
         self.permutations_list = permutations_list
-        # forum
-        self.type = config['plateform']['crackedto']['type']
+        # hosting
+        self.type = config['plateform']['devto']['type']
 
-    # Generate all potential cracked.to usernames
+    # Generate all potential devto usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +24,7 @@ class Crackedto:
         return possible_usernames
 
     def search(self):
-        cracked_usernames = {
+        devto_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,11 +34,12 @@ class Crackedto:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to cracked.to")
+                print("failed to connect to devto")
             
-             # If the account exists
+            # If the account exists
             if r.status_code == 200:
-                cracked_usernames["accounts"].append({"value": username})
+                devto_usernames["accounts"].append({"value": username})
+
             time.sleep(self.delay)
         
-        return cracked_usernames
+        return devto_usernames

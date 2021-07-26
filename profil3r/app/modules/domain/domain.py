@@ -39,7 +39,7 @@ class Domain:
         r = None
         for domain in possible_domains_list:
             try:
-                r = requests.head(domain, timeout=5)
+                r = requests.head(domain, timeout=5, allow_redirects=True)
             except requests.ConnectionError:
                 pass
 

@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-class JeuxVideo:
+class Jeuxvideo:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
@@ -33,7 +33,7 @@ class JeuxVideo:
 
         for username in possible_usernames_list:
             try:
-                r = requests.get(username)
+                r = requests.get(username, timeout=5)
             except requests.ConnectionError:
                 print("failed to connect to jeuxvideo.com")
             

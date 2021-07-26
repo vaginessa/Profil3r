@@ -1,21 +1,24 @@
-from profil3r.app.modules.hosting.aboutme import AboutMe
-from profil3r.app.modules.hosting.wordpress import WordPress
-from profil3r.app.modules.hosting.slideshare import SlideShare
+from profil3r.app.modules.hosting.aboutme import Aboutme
+from profil3r.app.modules.hosting.wordpress import Wordpress
+from profil3r.app.modules.hosting.slideshare import Slideshare
 
 # AboutMe
 def aboutme(self):
-    self.result["aboutme"] = AboutMe(self.config, self.permutations_list).search() 
+    self.result["aboutme"] = Aboutme(self.config, self.permutations_list).search() 
     # print results
     self.print_results("aboutme")
+    return self.result["aboutme"]
 
 # WordPress
 def wordpress(self):
-    self.result["wordpress"] = WordPress(self.config, self.permutations_list).search() 
+    self.result["wordpress"] = Wordpress(self.config, self.permutations_list).search() 
     # print results
     self.print_results("wordpress")
+    return self.result["wordpress"]
 
 # SlideShare
 def slideshare(self):
-    self.result["slideshare"] = SlideShare(self.config, self.permutations_list).search() 
+    self.result["slideshare"] = Slideshare(self.config, self.permutations_list).search() 
     # print results
     self.print_results("slideshare")
+    return self.result["slideshare"]

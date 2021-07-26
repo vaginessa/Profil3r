@@ -162,7 +162,7 @@
             "rate_limit": 1000,
             "format": "https://cracked.to/{permutation}",
             "type": "forum",
-            "enabled": "yes"
+            "enabled": "no"
         },
         "vimeo": {
             "rate_limit": 1000,
@@ -171,7 +171,7 @@
             "enabled": "yes"
         },
         "patreon": {
-            "rate_limit": 1000,
+            "rate_limit": 1500,
             "format": "https://www.patreon.com/{permutation}",
             "type": "money",
             "enabled": "yes"
@@ -183,7 +183,7 @@
             "enabled": "yes"
         },
         "smule": {
-            "rate_limit": 1000,
+            "rate_limit": 1500,
             "format": "https://smule.com/{permutation}",
             "type": "music",
             "enabled": "yes"
@@ -238,9 +238,9 @@
         },
         "tripadvisor": {
             "rate_limit": 1000,
-            "format": "https://www.tripadvisor.com/Profile/{permutation}",
+            "format": "https://tripadvisor.com/Profile/{permutation}",
             "type": "travel",
-            "enabled": "yes"
+            "enabled": "no"
         },
         "wikipedia": {
             "rate_limit": 1000,
@@ -257,6 +257,30 @@
         "npm": {
             "rate_limit": 1000,
             "format": "https://www.npmjs.com/~{permutation}",
+            "type": "programming",
+            "enabled": "yes"
+        },
+        "rootme": {
+            "rate_limit": 1000,
+            "format": "https://root-me.org/{permutation}",
+            "type": "ctf",
+            "enabled": "yes"
+        },
+        "asciinema": {
+            "rate_limit": 1000,
+            "format": "https://asciinema.org/~{permutation}",
+            "type": "programming",
+            "enabled": "yes"
+        },
+        "devto": {
+            "rate_limit": 1000,
+            "format": "https://dev.to/{permutation}",
+            "type": "medias",
+            "enabled": "yes"
+        },
+        "codementor": {
+            "rate_limit": 1000,
+            "format": "https://www.codementor.io/@{permutation}",
             "type": "programming",
             "enabled": "yes"
         }

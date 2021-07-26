@@ -1,19 +1,19 @@
 import requests
 import time
 
-class Crackedto:
+class Asciinema:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['crackedto']['rate_limit'] / 1000
-        # https://cracked.to/{username}
-        self.format = config['plateform']['crackedto']['format']
-        # cracked.to usernames are not case sensitive
-        self.permutations_list = permutations_list
-        # forum
-        self.type = config['plateform']['crackedto']['type']
+        self.delay = config['plateform']['asciinema']['rate_limit'] / 1000
+        # https://asciinema.org/~{username}
+        self.format = config['plateform']['asciinema']['format']
+        # asciinema usernames are not case sensitive
+        self.permutations_list = [perm.lower() for perm in permutations_list]
+        # programming
+        self.type = config['plateform']['asciinema']['type']
 
-    # Generate all potential cracked.to usernames
+    # Generate all potential asciinema usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +24,7 @@ class Crackedto:
         return possible_usernames
 
     def search(self):
-        cracked_usernames = {
+        asciinema_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,11 +34,11 @@ class Crackedto:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to cracked.to")
+                print("failed to connect to asciinema")
             
-             # If the account exists
+            # If the account exists
             if r.status_code == 200:
-                cracked_usernames["accounts"].append({"value": username})
+                asciinema_usernames["accounts"].append({"value": username})
             time.sleep(self.delay)
         
-        return cracked_usernames
+        return asciinema_usernames

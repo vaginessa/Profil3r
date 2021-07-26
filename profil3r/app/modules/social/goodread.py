@@ -2,7 +2,7 @@ import requests
 import time
 import re
 
-class GoodRead:
+class Goodread:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
@@ -32,7 +32,7 @@ class GoodRead:
 
         for username in possible_usernames_list:
             try:
-                r = requests.get(username)
+                r = requests.get(username, timeout=5)
             except requests.ConnectionError:
                 print("failed to connect to goodread")
             

@@ -12,7 +12,7 @@ class Core(object):
     
     from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr, goodread
     from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto, lesswrong
-    from .services._programming import github, pastebin, replit, pypi, npm
+    from .services._programming import github, pastebin, replit, pypi, npm, asciinema, codementor
     from .services._tchat import skype
     from .services._music import soundcloud, spotify, smule
     from .services._entertainment import dailymotion, vimeo, deviantart
@@ -22,13 +22,14 @@ class Core(object):
     from .services._hosting import aboutme, wordpress, slideshare
     from .services._domain import domain
     from .services._gaming import steam
-    from .services._medias import medium
+    from .services._medias import medium, devto
     from .services._travel import tripadvisor
     from .services._collaborative import wikipedia
+    from .services._ctf import rootme
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.4.4"        
+        self.version = "1.4.5" 
         self.separators = []
         self.result = {}
         self.permutations_list = []
@@ -56,6 +57,8 @@ class Core(object):
             "replit":            {"method" : self.replit},
             "pypi":              {"method" : self.pypi},
             "npm":               {"method" : self.npm},
+            "asciinema":         {"method" : self.asciinema},
+            "codementor":        {"method" : self.codementor},
             # Forums:
             "0x00sec":           {"method" : self.zeroxzerozerosec},
             "jeuxvideo.com":     {"method" : self.jeuxvideo},
@@ -85,8 +88,11 @@ class Core(object):
             "steam":             {"method" : self.steam},
             # Medias
             "medium":            {"method" : self.medium},
+            "devto":             {"method" : self.devto},
             # Travel
             "tripadvisor":       {"method" : self.tripadvisor},
             # Collaborative
-            "wikipedia":         {"method" : self.wikipedia}
+            "wikipedia":         {"method" : self.wikipedia},
+            # CTF
+            "rootme":            {"method" : self.rootme}
         }

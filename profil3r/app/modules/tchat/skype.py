@@ -35,7 +35,7 @@ class Skype:
         for username in possible_usernames_list:
             try:
                 skypli_formatted_URL = skypli_URL.format(username)
-                r = requests.get(skypli_formatted_URL)
+                r = requests.get(skypli_formatted_URL, timeout=5)
             except requests.ConnectionError:
                 print("failed to connect to skype")
             
