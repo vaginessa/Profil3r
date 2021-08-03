@@ -1,4 +1,4 @@
-from profil3r.app.core.colors import Colors
+from profil3r.app.colors import Colors
 import json
 import os
 from jinja2 import Template
