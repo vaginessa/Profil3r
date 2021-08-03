@@ -24,7 +24,7 @@ class Core(object):
     from .services._gaming import steam
     from .services._medias import medium, devto
     from .services._travel import tripadvisor
-    from .services._collaborative import wikipedia
+    from .services._collaborative import wikipedia, instructables
     from .services._ctf import rootme
 
     def __init__(self, config_path):
@@ -94,6 +94,7 @@ class Core(object):
             "tripadvisor":       {"method" : self.tripadvisor},
             # Collaborative
             "wikipedia":         {"method" : self.wikipedia},
+            "instructables":     {"method" : self.instructables},
             # CTF
             "rootme":            {"method" : self.rootme}
         }

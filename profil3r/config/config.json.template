@@ -289,6 +289,12 @@
             "format": "https://cash.app/${permutation}",
             "type": "money",
             "enabled": "yes"
+        },
+        "instructables": {
+            "rate_limit": 1000,
+            "format": "https://www.instructables.com/member/{permutation}",
+            "type": "collaborative",
+            "enabled": "yes"
         }
     }
 }

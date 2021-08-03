@@ -151,6 +151,7 @@ pip3 install profil3r
 |Service        | Profile Scraping |
 |---------------|------------------|
 | Wikipedia     | No               |
+| Instructables | Yes ✔            |
 
 #### 🏆 CTF
 
