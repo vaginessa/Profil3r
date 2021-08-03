@@ -117,6 +117,7 @@ pip3 install profil3r
 |---------------|------------------|
 | BuyMeACoffee  | No               |
 | Patreon       | No               |
+| CashApp       | No               |
 
 #### 🕸️ Web Hosting
 

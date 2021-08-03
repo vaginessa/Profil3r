@@ -283,6 +283,12 @@
             "format": "https://www.codementor.io/@{permutation}",
             "type": "programming",
             "enabled": "yes"
+        },
+        "cashapp": {
+            "rate_limit": 1000,
+            "format": "https://cash.app/${permutation}",
+            "type": "money",
+            "enabled": "yes"
         }
     }
 }

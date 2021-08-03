@@ -18,7 +18,7 @@ class Core(object):
     from .services._entertainment import dailymotion, vimeo, deviantart
     from .services._email import email
     from .services._porn import pornhub, redtube, xvideos
-    from .services._money import buymeacoffee, patreon
+    from .services._money import buymeacoffee, patreon, cashapp
     from .services._hosting import aboutme, wordpress, slideshare
     from .services._domain import domain
     from .services._gaming import steam
@@ -78,6 +78,7 @@ class Core(object):
             # Money
             "buymeacoffee":      {"method" : self.buymeacoffee},
             "patreon":           {"method" : self.patreon},
+            "cashapp":           {"method" : self.cashapp},
             # Hosting
             "aboutme":           {"method" : self.aboutme},
             "wordpress":         {"method" : self.wordpress},
