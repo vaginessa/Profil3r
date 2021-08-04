@@ -49,16 +49,16 @@ class Slideshare:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all("h1", {"itemprop":"name"})[0].get_text()).strip() if soup.find_all("h1", {"itemprop":"name"}) else None
-                    user_slideshares_count = str(soup.find_all(class_="j-slideshare")[0].get_text()).strip().split(" ")[0] if soup.find_all(class_="j-slideshare") else None
-                    user_followers_count = str(soup.find_all(class_="j-followers")[0].get_text()).strip().split(" ")[0] if soup.find_all(class_="j-followers") else None
-                    user_location = str(soup.find_all(class_="location")[0].get_text()).strip() if soup.find_all(class_="location") else None
-                    user_clipboards = str(soup.find_all(class_="user-clipboards")[0].get_text()).strip().split(" ")[0] if soup.find_all(class_="user-clipboards") else None
-                    user_role = str(soup.find_all(class_="role")[0].get_text()).strip() if soup.find_all(class_="role") else None
-                    user_description = str(soup.find_all(class_="description")[0].get_text()).strip().replace("\n", " ") if soup.find_all(class_="description") else None
-                    user_website = str(soup.find_all(class_="web")[0].get_text().replace("\n", " ")).strip() if soup.find_all(class_="web") else None
-                    user_twitter = str(soup.find_all(class_="twitter")[0]['href']).strip() if soup.find_all(class_="twitter") else None
-                    user_linkedin = str(soup.find_all(class_="linkedin")[0]['href']).strip() if soup.find_all(class_="linkedin") else None
+                    user_username = str(soup.find_all("h1", {"itemprop":"name"})[0].get_text()) if soup.find_all("h1", {"itemprop":"name"}) else None
+                    user_slideshares_count = str(soup.find_all(class_="j-slideshare")[0].get_text()).split(" ")[0] if soup.find_all(class_="j-slideshare") else None
+                    user_followers_count = str(soup.find_all(class_="j-followers")[0].get_text()).split(" ")[0] if soup.find_all(class_="j-followers") else None
+                    user_location = str(soup.find_all(class_="location")[0].get_text()) if soup.find_all(class_="location") else None
+                    user_clipboards = str(soup.find_all(class_="user-clipboards")[0].get_text()).split(" ")[0] if soup.find_all(class_="user-clipboards") else None
+                    user_role = str(soup.find_all(class_="role")[0].get_text()) if soup.find_all(class_="role") else None
+                    user_description = str(soup.find_all(class_="description")[0].get_text()) if soup.find_all(class_="description") else None
+                    user_website = str(soup.find_all(class_="web")[0].get_text()) if soup.find_all(class_="web") else None
+                    user_twitter = str(soup.find_all(class_="twitter")[0]['href']) if soup.find_all(class_="twitter") else None
+                    user_linkedin = str(soup.find_all(class_="linkedin")[0]['href']) if soup.find_all(class_="linkedin") else None
 
                     account["username"] = {"name": "Username", "value": user_username}
                     account["slideshares_count"] = {"name": "Slideshares", "value": user_slideshares_count}

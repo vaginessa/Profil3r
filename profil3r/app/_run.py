@@ -1,11 +1,12 @@
-from profil3r.app.core.colors import Colors
+from profil3r.app.colors import Colors
 import threading
 
 def run(self):
-    self.load_config()
-    self.print_logo()
     # Get arguments from the command line
     self.parse_arguments()
+    
+    self.load_config()
+    self.print_logo()
 
     self.menu()
     self.get_permutations()

@@ -59,6 +59,7 @@ pip3 install profil3r
 | Flickr      | Yes ✔️            |
 | DeviantArt  | No               |
 | GoodReads   | No               |
+| Ello        | No               |
 
 #### 🎵 Music
 
@@ -67,6 +68,7 @@ pip3 install profil3r
 | Soundcloud  | No               |
 | Spotify     | No               |
 | Smule       | No               |
+| bandcamp    | Yes ✔️            |
 
 #### ‍💻 Programming
 
@@ -117,6 +119,7 @@ pip3 install profil3r
 |---------------|------------------|
 | BuyMeACoffee  | No               |
 | Patreon       | No               |
+| CashApp       | No               |
 
 #### 🕸️ Web Hosting
 
@@ -150,6 +153,7 @@ pip3 install profil3r
 |Service        | Profile Scraping |
 |---------------|------------------|
 | Wikipedia     | No               |
+| Instructables | Yes ✔            |
 
 #### 🏆 CTF
 

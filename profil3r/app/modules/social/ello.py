@@ -1,19 +1,20 @@
 import requests
+from bs4 import BeautifulSoup
 import time
+import re
 
-class Zeroxzerozerosec:
+class Ello:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['zeroxzerozerosec']['rate_limit'] / 1000
-        # https://0x00sec.org/u/{username}
-        self.format = config['plateform']['zeroxzerozerosec']['format']
-        # 0x00sec.org usernames are not case sensitive
-        self.permutations_list = [perm.lower() for perm in permutations_list]
-        # forum
-        self.type = config['plateform']['zeroxzerozerosec']['type']
+        self.delay = config['plateform']['ello']['rate_limit'] / 1000
+        # https://ello.co/{username}
+        self.format = config['plateform']['ello']['format']
+        self.permutations_list = permutations_list
+        # social
+        self.type = config['plateform']['ello']['type']
 
-    # Generate all potential 0x00sec usernames
+    # Generate all potential ello usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +25,7 @@ class Zeroxzerozerosec:
         return possible_usernames
 
     def search(self):
-        zeroxzerozerosec_usernames = {
+        ello_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,11 +35,12 @@ class Zeroxzerozerosec:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to 0x00sec.org")
+                print("failed to connect to ello")
             
             # If the account exists
             if r.status_code == 200:
-                zeroxzerozerosec_usernames["accounts"].append({"value": username})
+                ello_usernames["accounts"].append({"value": username})
+
             time.sleep(self.delay)
         
-        return zeroxzerozerosec_usernames
+        return ello_usernames

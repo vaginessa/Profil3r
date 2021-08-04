@@ -6,15 +6,15 @@ class Jeuxvideo:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['jeuxvideo.com']['rate_limit'] / 1000
+        self.delay = config['plateform']['jeuxvideo']['rate_limit'] / 1000
         # https://www.jeuxvideo.com/profil/{}?mode=infos
-        self.format = config['plateform']['jeuxvideo.com']['format']
+        self.format = config['plateform']['jeuxvideo']['format']
         # jeuxvideo.com usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
         #forum
-        self.type = config['plateform']['jeuxvideo.com']['type']
+        self.type = config['plateform']['jeuxvideo']['type']
 
-    # Generate all potential 0x00sec usernames
+    # Generate all potential jeuxvideo.com usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -50,14 +50,14 @@ class Jeuxvideo:
                 
                 # Scrape the user description
                 try:
-                    user_description = str(soup.find_all(class_='bloc-description-desc')[0].get_text()).replace("\n", " ").strip() if soup.find_all(class_='bloc-description-desc') else None
+                    user_description = str(soup.find_all(class_='bloc-description-desc')[0].get_text()) if soup.find_all(class_='bloc-description-desc') else None
                     account["description"] = {"name": "Description", "value": user_description}
                 except:
                     pass
                 
                 # scrape the user signature
                 try:
-                    user_signature = str(soup.find_all(class_='bloc-signature-desc')[0].find_all("p")[1].get_text()).replace("\n", " ").strip() if soup.find_all(class_='bloc-signature-desc') else None
+                    user_signature = str(soup.find_all(class_='bloc-signature-desc')[0].find_all("p")[1].get_text()) if soup.find_all(class_='bloc-signature-desc') else None
                     account["signature"] = {"name": "Signature", "value": user_signature}
                 except:
                     pass

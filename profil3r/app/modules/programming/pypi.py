@@ -49,8 +49,8 @@ class Pypi:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='author-profile__name')[0].get_text()).strip() if soup.find_all(class_='author-profile__name') else None
-                    user_account_creation_date = str(soup.find_all('time')[0].get_text()).strip() if soup.find_all('time') else None
+                    user_full_name = str(soup.find_all(class_='author-profile__name')[0].get_text()) if soup.find_all(class_='author-profile__name') else None
+                    user_account_creation_date = str(soup.find_all('time')[0].get_text()) if soup.find_all('time') else None
 
                     account["full_name"] = {"name": "Full Name", "value": user_full_name}
                     account["account_creation_date"] = {"name": "Account Creation", "value": user_account_creation_date}

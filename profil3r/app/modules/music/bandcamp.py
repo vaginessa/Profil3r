@@ -2,18 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-class Aboutme:
+class Bandcamp:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['aboutme']['rate_limit'] / 1000
-        # https://about.me/{username}
-        self.format = config['plateform']['aboutme']['format']
+        self.delay = config['plateform']['bandcamp']['rate_limit'] / 1000
+        # https://bandcamp.com/{username}
+        self.format = config['plateform']['bandcamp']['format']
         self.permutations_list = permutations_list
-        # hosting
-        self.type = config['plateform']['aboutme']['type']
+        # music
+        self.type = config['plateform']['bandcamp']['type']
 
-    # Generate all potential aboutme usernames
+    # Generate all potential bandcamp usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +24,7 @@ class Aboutme:
         return possible_usernames
 
     def search(self):
-        aboutme_usernames = {
+        bandcamp_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,7 +34,7 @@ class Aboutme:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to aboutme")
+                print("failed to connect to bandcamp")
             
             # If the account exists
             if r.status_code == 200:
@@ -49,21 +49,19 @@ class Aboutme:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all(class_="name")[0].get_text()) if soup.find_all(class_="name") else None
-                    user_location = str(soup.find_all(class_="location")[1].get_text()) if soup.find_all(class_="location") else None
-                    user_role = str(soup.find_all(class_="role")[0].get_text()) if soup.find_all(class_="role") else None
-                    user_description = str(soup.find_all(class_="short-bio")[0].get_text()) if soup.find_all(class_="short-bio") else None
+                    user_username = str(soup.find_all("div", {"class": "name"})[0].find("h1").get_text()) if soup.find_all("div", {"class": "name"}) else None
+                    user_music_gender = str(soup.find_all("li", {"class": "genre-wrapper"})[0].get_text()) if soup.find_all("li", {"class": "genre-wrapper"}) else None
+                    user_website = str(soup.find_all("div", {"class": "website wide"})[0].get_text()) if soup.find_all("div", {"class": "website wide"}) else None
 
                     account["username"] = {"name": "Username", "value": user_username}
-                    account["location"] = {"name": "Location", "value": user_location}
-                    account["role"] = {"name": "Role", "value": user_role}
-                    account["description"] = {"name": "Description", "value": user_description}
+                    account["music_gender"] = {"name": "Musical Gender", "value": user_music_gender}
+                    account["website"] = {"name": "Website", "value": user_website}
                 except:
                     pass
                 
                 # Append the account to the accounts table
-                aboutme_usernames["accounts"].append(account)
+                bandcamp_usernames["accounts"].append(account)
 
             time.sleep(self.delay)
         
-        return aboutme_usernames
+        return bandcamp_usernames

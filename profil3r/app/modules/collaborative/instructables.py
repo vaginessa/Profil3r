@@ -1,19 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import re
 
-class Aboutme:
+class Instructables:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['aboutme']['rate_limit'] / 1000
-        # https://about.me/{username}
-        self.format = config['plateform']['aboutme']['format']
+        self.delay = config['plateform']['instructables']['rate_limit'] / 1000
+        # https://www.instructables.com/members/{username}
+        self.format = config['plateform']['instructables']['format']
         self.permutations_list = permutations_list
-        # hosting
-        self.type = config['plateform']['aboutme']['type']
+        # Collaborative
+        self.type = config['plateform']['instructables']['type']
 
-    # Generate all potential aboutme usernames
+    # Generate all potential root-me usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +25,7 @@ class Aboutme:
         return possible_usernames
 
     def search(self):
-        aboutme_usernames = {
+        instructables_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,7 +35,7 @@ class Aboutme:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to aboutme")
+                print("failed to connect to instructables")
             
             # If the account exists
             if r.status_code == 200:
@@ -49,21 +50,19 @@ class Aboutme:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all(class_="name")[0].get_text()) if soup.find_all(class_="name") else None
-                    user_location = str(soup.find_all(class_="location")[1].get_text()) if soup.find_all(class_="location") else None
-                    user_role = str(soup.find_all(class_="role")[0].get_text()) if soup.find_all(class_="role") else None
-                    user_description = str(soup.find_all(class_="short-bio")[0].get_text()) if soup.find_all(class_="short-bio") else None
+                    user_username = str(soup.find_all('h1', {'class':'profile-title'})[0].get_text()) if soup.find_all('h1', {'class':'profile-title'}) else None
+                    user_location = str(soup.find_all('span', {'class':'stat-text member-location'})[0].get_text()) if soup.find_all('span', {'class':'stat-text member-location'}) else None
+                    user_account_creation_date = str(soup.find_all('span', {'class':'stat-text member-signup-date'})[0].get_text()).replace("Joined ", "") if soup.find_all('span', {'class':'stat-text member-signup-date'}) else None
 
                     account["username"] = {"name": "Username", "value": user_username}
                     account["location"] = {"name": "Location", "value": user_location}
-                    account["role"] = {"name": "Role", "value": user_role}
-                    account["description"] = {"name": "Description", "value": user_description}
+                    account["creation_date"] = {"name": "Account Creation", "value": user_account_creation_date}
                 except:
                     pass
                 
                 # Append the account to the accounts table
-                aboutme_usernames["accounts"].append(account)
+                instructables_usernames["accounts"].append(account)
 
             time.sleep(self.delay)
         
-        return aboutme_usernames
+        return instructables_usernames

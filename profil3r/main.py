@@ -1,4 +1,4 @@
-from profil3r.app.core import Core
+from profil3r.app import Core
 import os 
 
 def main():

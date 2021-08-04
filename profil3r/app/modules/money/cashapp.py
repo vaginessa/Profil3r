@@ -1,19 +1,19 @@
 import requests
 import time
 
-class Zeroxzerozerosec:
+class Cashapp:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['zeroxzerozerosec']['rate_limit'] / 1000
-        # https://0x00sec.org/u/{username}
-        self.format = config['plateform']['zeroxzerozerosec']['format']
-        # 0x00sec.org usernames are not case sensitive
+        self.delay = config['plateform']['cashapp']['rate_limit'] / 1000
+        # https://cash.app/${username}
+        self.format = config['plateform']['cashapp']['format']
+        # cashapp usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # forum
-        self.type = config['plateform']['zeroxzerozerosec']['type']
+        # money
+        self.type = config['plateform']['cashapp']['type']
 
-    # Generate all potential 0x00sec usernames
+    # Generate all potential cashapp usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +24,7 @@ class Zeroxzerozerosec:
         return possible_usernames
 
     def search(self):
-        zeroxzerozerosec_usernames = {
+        cashapp_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -34,11 +34,11 @@ class Zeroxzerozerosec:
             try:
                 r = requests.get(username, timeout=5)
             except requests.ConnectionError:
-                print("failed to connect to 0x00sec.org")
+                print("failed to connect to cashapp")
             
             # If the account exists
             if r.status_code == 200:
-                zeroxzerozerosec_usernames["accounts"].append({"value": username})
+                cashapp_usernames["accounts"].append({"value": username})
             time.sleep(self.delay)
         
-        return zeroxzerozerosec_usernames
+        return cashapp_usernames
