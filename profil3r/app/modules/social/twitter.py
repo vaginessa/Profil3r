@@ -72,13 +72,13 @@ class Twitter:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='profile-card-fullname')[0].get_text()).strip() if soup.find_all(class_='profile-card-fullname') else None
-                    user_username = str(soup.find_all(class_='profile-card-username')[0].get_text()).strip() if soup.find_all(class_='profile-card-username') else None
-                    user_bio = str(soup.find_all(class_='profile-bio')[0].get_text()).replace("\n", "").strip() if soup.find_all(class_='profile-bio') else None
-                    user_tweets_count = str(soup.find_all(class_='profile-stat-num')[0].get_text().replace(",", "")).strip() if soup.find_all(class_='profile-stat-num') else None
+                    user_full_name = str(soup.find_all(class_='profile-card-fullname')[0].get_text()) if soup.find_all(class_='profile-card-fullname') else None
+                    user_username = str(soup.find_all(class_='profile-card-username')[0].get_text()) if soup.find_all(class_='profile-card-username') else None
+                    user_bio = str(soup.find_all(class_='profile-bio')[0].get_text()).replace("\n", "") if soup.find_all(class_='profile-bio') else None
+                    user_tweets_count = str(soup.find_all(class_='profile-stat-num')[0].get_text().replace(",", "")) if soup.find_all(class_='profile-stat-num') else None
                     user_following_count = str(soup.find_all(class_='profile-stat-num')[1].get_text().replace(",", "")) if soup.find_all(class_='profile-stat-num') else None
-                    user_followers_count = str(soup.find_all(class_='profile-stat-num')[2].get_text().replace(",", "")).strip() if soup.find_all(class_='profile-stat-num') else None
-                    user_likes_count = str(soup.find_all(class_='profile-stat-num')[3].get_text().replace(",", "")).strip() if soup.find_all(class_='profile-stat-num') else None
+                    user_followers_count = str(soup.find_all(class_='profile-stat-num')[2].get_text().replace(",", "")) if soup.find_all(class_='profile-stat-num') else None
+                    user_likes_count = str(soup.find_all(class_='profile-stat-num')[3].get_text().replace(",", "")) if soup.find_all(class_='profile-stat-num') else None
 
                     account["full_name"] = {"name": "Full Name", "value": user_full_name}
                     account["username"] = {"name": "Username", "value": user_username}

@@ -50,9 +50,9 @@ class Instructables:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all('h1', {'class':'profile-title'})[0].get_text()).strip() if soup.find_all('h1', {'class':'profile-title'}) else None
-                    user_location = str(soup.find_all('span', {'class':'stat-text member-location'})[0].get_text()).strip() if soup.find_all('span', {'class':'stat-text member-location'}) else None
-                    user_account_creation_date = str(soup.find_all('span', {'class':'stat-text member-signup-date'})[0].get_text()).strip().replace("Joined ", "") if soup.find_all('span', {'class':'stat-text member-signup-date'}) else None
+                    user_username = str(soup.find_all('h1', {'class':'profile-title'})[0].get_text()) if soup.find_all('h1', {'class':'profile-title'}) else None
+                    user_location = str(soup.find_all('span', {'class':'stat-text member-location'})[0].get_text()) if soup.find_all('span', {'class':'stat-text member-location'}) else None
+                    user_account_creation_date = str(soup.find_all('span', {'class':'stat-text member-signup-date'})[0].get_text()).replace("Joined ", "") if soup.find_all('span', {'class':'stat-text member-signup-date'}) else None
 
                     account["username"] = {"name": "Username", "value": user_username}
                     account["location"] = {"name": "Location", "value": user_location}

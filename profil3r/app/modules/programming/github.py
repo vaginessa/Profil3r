@@ -49,11 +49,11 @@ class Github:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='vcard-fullname')[0].get_text()).strip() if soup.find_all(class_='vcard-fullname')[0].get_text().strip() != "" else None
-                    user_followers_count = str(soup.find_all(class_='text-bold color-text-primary')[0].get_text().replace(",", "")).strip()
-                    user_following_count = str(soup.find_all(class_='text-bold color-text-primary')[1].get_text().replace(",", "")).strip()
-                    user_stars_count = str(soup.find_all(class_='text-bold color-text-primary')[2].get_text().replace(",", "")).strip()
-                    user_org = str(soup.find_all(class_='p-org')[0].get_text()).strip() if soup.find_all(class_='p-org') else None
+                    user_full_name = str(soup.find_all(class_='vcard-fullname')[0].get_text())if soup.find_all(class_='vcard-fullname')[0].get_text().strip() != "" else None
+                    user_followers_count = str(soup.find_all(class_='text-bold color-text-primary')[0].get_text().replace(",", ""))
+                    user_following_count = str(soup.find_all(class_='text-bold color-text-primary')[1].get_text().replace(",", ""))
+                    user_stars_count = str(soup.find_all(class_='text-bold color-text-primary')[2].get_text().replace(",", ""))
+                    user_org = str(soup.find_all(class_='p-org')[0].get_text()) if soup.find_all(class_='p-org') else None
                     user_website = str(soup.find_all("li", {"data-test-selector": "profile-website-url"})[0].find_all("a")[0].get_text()) if soup.find_all("li", {"data-test-selector": "profile-website-url"}) else None
                     user_twitter = str(soup.find_all("li", {"itemprop": "twitter"})[0].find_all("a")[0].get_text()) if soup.find_all("li", {"itemprop": "twitter"}) else None
                     user_location = str(soup.find_all("li", {"itemprop": "homeLocation"})[0].find_all("span")[0].get_text()) if soup.find_all("li", {"itemprop": "homeLocation"}) else None

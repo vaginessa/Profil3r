@@ -50,12 +50,12 @@ class Rootme:
                 
                 # Scrape the user informations
                 try:
-                    user_rank = str(soup.find_all('h3')[4].get_text()).strip() if soup.find_all('h3') else None
-                    user_score = str(soup.find_all('h3')[5].get_text()).strip() if soup.find_all('h3') else None
-                    user_challenges_count = str(soup.find_all('h3')[6].get_text()).strip() if soup.find_all('h3') else None
-                    user_machines_count = str(soup.find_all('h3')[7].get_text()).strip() if soup.find_all('h3') else None
-                    user_website = str(soup.find_all('a', class_=re.compile('auteur-nom_site-*'))[0]['href']).strip() if soup.find_all('a', class_=re.compile('auteur-nom_site-*')) else None
-                    user_bio = str(soup.find('li', class_=re.compile('auteur-bio-*')).find('p').get_text().replace("\n", " ")).strip() if soup.find('li', class_=re.compile('auteur-bio-*')) else None
+                    user_rank = str(soup.find_all('h3')[4].get_text()) if soup.find_all('h3') else None
+                    user_score = str(soup.find_all('h3')[5].get_text()) if soup.find_all('h3') else None
+                    user_challenges_count = str(soup.find_all('h3')[6].get_text()) if soup.find_all('h3') else None
+                    user_machines_count = str(soup.find_all('h3')[7].get_text()) if soup.find_all('h3') else None
+                    user_website = str(soup.find_all('a', class_=re.compile('auteur-nom_site-*'))[0]['href']) if soup.find_all('a', class_=re.compile('auteur-nom_site-*')) else None
+                    user_bio = str(soup.find('li', class_=re.compile('auteur-bio-*')).find('p').get_text()) if soup.find('li', class_=re.compile('auteur-bio-*')) else None
                    
                     account["rank"] = {"name": "Rank", "value": user_rank}
                     account["score"] = {"name": "Score", "value": user_score}

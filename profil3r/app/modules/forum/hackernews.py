@@ -50,8 +50,8 @@ class Hackernews:
                 
                 # Scrape the user informations
                 try:
-                    user_creation_date = str(soup.find_all("table")[2].find_all("td")[3].get_text()).strip() if soup.find_all("table") else None
-                    user_karma = str(soup.find_all("table")[2].find_all("td")[5].get_text()).strip() if soup.find_all("table") else None
+                    user_creation_date = str(soup.find_all("table")[2].find_all("td")[3].get_text()) if soup.find_all("table") else None
+                    user_karma = str(soup.find_all("table")[2].find_all("td")[5].get_text()) if soup.find_all("table") else None
 
                     account["creation_date"] = {"name": "Creation Date", "value": user_creation_date}
                     account["karma"] = {"name": "Karma", "value": user_karma}

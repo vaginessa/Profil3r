@@ -53,12 +53,12 @@ class Instagram:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='full-name')[0].get_text()).strip()
-                    user_username = str(soup.find_all(class_='username')[0].get_text()).strip()
-                    user_bio = str(soup.find_all(class_='bio')[0].get_text()).replace("\n", "").strip()
-                    user_posts_count = str(soup.find_all(class_='count')[0].get_text().replace(",", "")).strip()
-                    user_following_count = str(soup.find_all(class_='count')[1].get_text().replace(",", "")).strip()
-                    user_followers_count = str(soup.find_all(class_='count')[2].get_text().replace(",", "")).strip()
+                    user_full_name = str(soup.find_all(class_='full-name')[0].get_text())
+                    user_username = str(soup.find_all(class_='username')[0].get_text())
+                    user_bio = str(soup.find_all(class_='bio')[0].get_text()).replace("\n", "")
+                    user_posts_count = str(soup.find_all(class_='count')[0].get_text().replace(",", ""))
+                    user_following_count = str(soup.find_all(class_='count')[1].get_text().replace(",", ""))
+                    user_followers_count = str(soup.find_all(class_='count')[2].get_text().replace(",", ""))
 
                     account["full_name"] = {"name": "Full Name", "value": user_full_name}
                     account["username"] = {"name": "Username", "value": user_username}

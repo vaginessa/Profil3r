@@ -5,13 +5,13 @@ class Zeroxzerozerosec:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['0x00sec']['rate_limit'] / 1000
+        self.delay = config['plateform']['zeroxzerozerosec']['rate_limit'] / 1000
         # https://0x00sec.org/u/{username}
-        self.format = config['plateform']['0x00sec']['format']
+        self.format = config['plateform']['zeroxzerozerosec']['format']
         # 0x00sec.org usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
         # forum
-        self.type = config['plateform']['0x00sec']['type']
+        self.type = config['plateform']['zeroxzerozerosec']['type']
 
     # Generate all potential 0x00sec usernames
     def possible_usernames(self):

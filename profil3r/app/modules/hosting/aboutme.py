@@ -49,10 +49,10 @@ class Aboutme:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all(class_="name")[0].get_text()).strip() if soup.find_all(class_="name") else None
-                    user_location = str(soup.find_all(class_="location")[1].get_text()).strip() if soup.find_all(class_="location") else None
-                    user_role = str(soup.find_all(class_="role")[0].get_text()).strip() if soup.find_all(class_="role") else None
-                    user_description = str(soup.find_all(class_="short-bio")[0].get_text()).strip() if soup.find_all(class_="short-bio") else None
+                    user_username = str(soup.find_all(class_="name")[0].get_text()) if soup.find_all(class_="name") else None
+                    user_location = str(soup.find_all(class_="location")[1].get_text()) if soup.find_all(class_="location") else None
+                    user_role = str(soup.find_all(class_="role")[0].get_text()) if soup.find_all(class_="role") else None
+                    user_description = str(soup.find_all(class_="short-bio")[0].get_text()) if soup.find_all(class_="short-bio") else None
 
                     account["username"] = {"name": "Username", "value": user_username}
                     account["location"] = {"name": "Location", "value": user_location}

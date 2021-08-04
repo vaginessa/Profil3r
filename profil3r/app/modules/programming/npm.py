@@ -50,10 +50,10 @@ class Npm:
                 
                 # Scrape the user informations
                 try:
-                    user_full_name = str(soup.find_all(class_='black-50 mv2')[0].get_text()).strip() if soup.find_all(class_='black-50 mv2') else None
-                    user_package_count = str(soup.find_all(class_='c3fc8940')[0].get_text()).strip() if soup.find_all(class_='c3fc8940') else None
-                    user_organization_count = str(soup.find_all(class_='c3fc8940')[1].get_text()).strip() if soup.find_all(class_='c3fc8940') else None
-                    user_github_account = str(soup.find_all('a', href = re.compile(r'https:\/\/github\.com.*'))[0].get_text()).strip() if soup.find_all('a', href = re.compile(r'https:\/\/github\.com.*')) else None
+                    user_full_name = str(soup.find_all(class_='black-50 mv2')[0].get_text()) if soup.find_all(class_='black-50 mv2') else None
+                    user_package_count = str(soup.find_all(class_='c3fc8940')[0].get_text()) if soup.find_all(class_='c3fc8940') else None
+                    user_organization_count = str(soup.find_all(class_='c3fc8940')[1].get_text()) if soup.find_all(class_='c3fc8940') else None
+                    user_github_account = str(soup.find_all('a', href = re.compile(r'https:\/\/github\.com.*'))[0].get_text()) if soup.find_all('a', href = re.compile(r'https:\/\/github\.com.*')) else None
 
                     account["full_name"] = {"name": "Full Name", "value": user_full_name}
                     account["packages_count"] = {"name": "Packages", "value": user_package_count}

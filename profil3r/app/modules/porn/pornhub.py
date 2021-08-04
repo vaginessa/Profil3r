@@ -50,9 +50,9 @@ class Pornhub:
                 
                 # Scrape the user informations
                 try:
-                    user_followers = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[0].get_text()).strip() if soup.find_all(class_="subViewsInfoContainer") else None
-                    user_friends = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[1].get_text()).strip() if soup.find_all(class_="subViewsInfoContainer") else None
-                    user_watch_count = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[2].get_text()).strip() if soup.find_all(class_="subViewsInfoContainer") else None
+                    user_followers = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[0].get_text()) if soup.find_all(class_="subViewsInfoContainer") else None
+                    user_friends = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[1].get_text()) if soup.find_all(class_="subViewsInfoContainer") else None
+                    user_watch_count = str(soup.find_all(class_="subViewsInfoContainer")[0].find_all(class_="number")[2].get_text()) if soup.find_all(class_="subViewsInfoContainer") else None
 
                     account["followers"] = {"name": "Followers", "value": user_followers}
                     account["friends"] = {"name": "Friends", "value": user_friends}

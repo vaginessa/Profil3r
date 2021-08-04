@@ -50,7 +50,7 @@ class Flickr:
                 
                 # Scrape the user informations
                 try:
-                    user_username = str(soup.find_all("div", {"class": "title"})[0].find_all("h1")[0].get_text().strip()) if soup.find_all("div", {"class": "title"}) else None
+                    user_username = str(soup.find_all("div", {"class": "title"})[0].find_all("h1")[0].get_text()) if soup.find_all("div", {"class": "title"}) else None
                     user_pictures_count = str(soup.find_all("p", {"class": "photo-count"})[0].get_text().split(' ')[0].replace(',', '')) if soup.find_all("p", {"class": "photo-count"}) else None
                     
                     followers = str(soup.find_all("p", {"class": "followers"})[0].get_text()) if soup.find_all("p", {"class": "followers"}) else None
