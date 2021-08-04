@@ -68,13 +68,13 @@
             "type": "programming",
             "enabled": "yes"
         },
-        "0x00sec": {
+        "zeroxzerozerosec": {
             "rate_limit": 1000,
             "format": "https://0x00sec.org/u/{permutation}",
             "type": "forum",
             "enabled": "yes"
         },
-        "jeuxvideo.com": {
+        "jeuxvideo": {
             "rate_limit": 1000,
             "format": "https://www.jeuxvideo.com/profil/{permutation}?mode=infos",
             "type": "forum",

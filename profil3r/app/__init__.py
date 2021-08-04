@@ -1,3 +1,8 @@
+import os
+from glob import glob
+import re
+from pathlib import Path
+
 class Core(object):
 
     from ._menu import menu
@@ -9,23 +14,6 @@ class Core(object):
     from ._logo import print_logo
     from ._argparse import parse_arguments
     from ._config import load_config
-    
-    from .services._social import facebook, twitter, instagram, tiktok, pinterest, linktree, myspace, flickr, goodread
-    from .services._forum import zeroxzerozerosec, jeuxvideo, hackernews, crackedto, lesswrong
-    from .services._programming import github, pastebin, replit, pypi, npm, asciinema, codementor
-    from .services._tchat import skype
-    from .services._music import soundcloud, spotify, smule
-    from .services._entertainment import dailymotion, vimeo, deviantart
-    from .services._email import email
-    from .services._porn import pornhub, redtube, xvideos
-    from .services._money import buymeacoffee, patreon, cashapp
-    from .services._hosting import aboutme, wordpress, slideshare
-    from .services._domain import domain
-    from .services._gaming import steam
-    from .services._medias import medium, devto
-    from .services._travel import tripadvisor
-    from .services._collaborative import wikipedia, instructables
-    from .services._ctf import rootme
 
     def __init__(self, config_path):
         self.config_path = config_path
@@ -33,68 +21,49 @@ class Core(object):
         self.separators = []
         self.result = {}
         self.permutations_list = []
-        
-        self.modules = {
-            # Emails
-            "email":             {"method" : self.email },
-            # Social
-            "facebook":          {"method" : self.facebook},
-            "twitter":           {"method" : self.twitter},
-            "tiktok":            {"method" : self.tiktok},
-            "instagram":         {"method" : self.instagram},
-            "pinterest":         {"method" : self.pinterest},
-            "linktree":          {"method" : self.linktree},
-            "myspace":           {"method" : self.myspace},
-            "flickr":            {"method" : self.flickr},
-            "goodread":          {"method" : self.goodread},
-            # Music
-            "soundcloud":        {"method" : self.soundcloud},
-            "spotify":           {"method" : self.spotify},
-            "smule":             {"method" : self.smule},
-            # Programming 
-            "github":            {"method" : self.github},
-            "pastebin":          {"method" : self.pastebin},
-            "replit":            {"method" : self.replit},
-            "pypi":              {"method" : self.pypi},
-            "npm":               {"method" : self.npm},
-            "asciinema":         {"method" : self.asciinema},
-            "codementor":        {"method" : self.codementor},
-            # Forums:
-            "0x00sec":           {"method" : self.zeroxzerozerosec},
-            "jeuxvideo.com":     {"method" : self.jeuxvideo},
-            "hackernews":        {"method" : self.hackernews},
-            "crackedto":         {"method" : self.crackedto},
-            "lesswrong":         {"method" : self.lesswrong},
-            # Tchat
-            "skype":             {"method" : self.skype},
-            # Entertainment
-            "dailymotion":       {"method" : self.dailymotion},
-            "vimeo":             {"method" : self.vimeo},   
-            "deviantart":        {"method" : self.deviantart},   
-            # Porn 
-            "pornhub":           {"method" : self.pornhub},
-            "redtube":           {"method" : self.redtube},
-            "xvideos":           {"method" : self.xvideos},
-            # Money
-            "buymeacoffee":      {"method" : self.buymeacoffee},
-            "patreon":           {"method" : self.patreon},
-            "cashapp":           {"method" : self.cashapp},
-            # Hosting
-            "aboutme":           {"method" : self.aboutme},
-            "wordpress":         {"method" : self.wordpress},
-            "slideshare":        {"method" : self.slideshare},
-            # Domain
-            "domain":            {"method" : self.domain},
-            # Gaming
-            "steam":             {"method" : self.steam},
-            # Medias
-            "medium":            {"method" : self.medium},
-            "devto":             {"method" : self.devto},
-            # Travel
-            "tripadvisor":       {"method" : self.tripadvisor},
-            # Collaborative
-            "wikipedia":         {"method" : self.wikipedia},
-            "instructables":     {"method" : self.instructables},
-            # CTF
-            "rootme":            {"method" : self.rootme}
-        }
+        self.modules = {}
+
+        # Automatic creation of a self.module object containing all methods related to scrapping
+        # self.module = {
+        #     "facebook": {"method": self.facebook},
+        #     ...
+        # }
+        modules = modules = glob("{}/*/*".format(modules_dir, category))
+        modules = list(filter(module_category_regexp.match, list(map(lambda x: Path(x).name, modules))))
+        modules = [module[:-3] for module in modules]
+        for module in modules:
+            self.modules[module] = {"method": getattr(self, module)}
+
+# Automatic creation of the methods used to scrape the different services
+module_regexp = re.compile("[a-z]+\.py")
+module_category_regexp = re.compile("[a-z]+")
+
+# Modules are in profil3r/app/modules/
+current_dir = os.path.dirname(os.path.realpath(__file__))
+modules_dir = "{}/modules/".format(current_dir)
+
+# List of of the different categories : ["collaborative", "ctf", ...]
+modules_categories = modules = glob("{}/*".format(modules_dir))
+modules_categories = list(filter(module_category_regexp.match, list(map(lambda x: Path(x).name, modules))))
+
+for category in modules_categories:
+    # Get the list of all modules present in the /modules folder ["instructables", "wikipedia", ...]
+    modules = modules = glob("{}/{}/*".format(modules_dir, category))
+    modules = list(filter(module_category_regexp.match, list(map(lambda x: Path(x).name, modules))))
+    # remove .py at the end of the module file name
+    modules = [module[:-3] for module in modules]
+
+    # For each module, we create a method of the Core class that will scrape the profile on the service
+    # then display the result
+    for module in modules:
+        exec("""
+from profil3r.app.modules.{category_name}.{module_name} import {module_name_capitalize}
+
+def {module_name}(self):
+    self.result["{module_name}"] = {module_name_capitalize}(self.config, self.permutations_list).search()
+    # print results
+    self.print_results("{module_name}")
+    return self.result["{module_name}"]
+
+setattr(Core, '{module_name}', {module_name})
+        """.format(category_name=category, module_name=module, module_name_capitalize=module.capitalize()))
