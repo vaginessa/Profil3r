@@ -59,6 +59,7 @@ pip3 install profil3r
 | Flickr      | Yes ✔️            |
 | DeviantArt  | No               |
 | GoodReads   | No               |
+| Ello        | No               |
 
 #### 🎵 Music
 
@@ -67,6 +68,7 @@ pip3 install profil3r
 | Soundcloud  | No               |
 | Spotify     | No               |
 | Smule       | No               |
+| bandcamp    | Yes ✔️            |
 
 #### ‍💻 Programming
 

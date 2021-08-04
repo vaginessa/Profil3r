@@ -295,6 +295,18 @@
             "format": "https://www.instructables.com/member/{permutation}",
             "type": "collaborative",
             "enabled": "yes"
+        },
+        "ello": {   
+            "rate_limit": 1000,
+            "format": "https://ello.co/{permutation}",
+            "type": "social",
+            "enabled": "yes"
+        },
+        "bandcamp": {
+            "rate_limit": 1000,
+            "format": "https://bandcamp.com/{permutation}",
+            "type": "music",
+            "enabled": "yes"
         }
     }
 }
