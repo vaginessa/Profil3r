@@ -1,4 +1,4 @@
-from profil3r.app.core import Core
+from profil3r.app import Core
 import os
 import pytest
 
@@ -34,6 +34,19 @@ def test_asciinema_invalid():
     if profil3r.config['plateform']['asciinema']['enabled'] == 'yes':
         assert len(profil3r.asciinema()['accounts']) == 0
 
+# bandcamp
+def test_bandcamp_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['bandcamp']['enabled'] == 'yes':
+        assert len(profil3r.bandcamp()['accounts']) == 1
+
+def test_bandcamp_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['bandcamp']['enabled'] == 'yes':
+        assert len(profil3r.bandcamp()['accounts']) == 0
+
 # buymeacoffee
 def test_buymeacoffee_valid():
     profil3r.permutations_list = ['givocefo']
@@ -46,6 +59,19 @@ def test_buymeacoffee_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['buymeacoffee']['enabled'] == 'yes':
         assert len(profil3r.buymeacoffee()['accounts']) == 0
+
+# cashapp
+def test_cashapp_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['cashapp']['enabled'] == 'yes':
+        assert len(profil3r.cashapp()['accounts']) == 1
+
+def test_cashapp_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['cashapp']['enabled'] == 'yes':
+        assert len(profil3r.cashapp()['accounts']) == 0
 
 # codementor 
 def test_codementor_valid():
@@ -124,6 +150,19 @@ def test_domain_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['domain']['enabled'] == 'yes':
         assert len(profil3r.domain()['accounts']) == 0
+
+# ello
+def test_ello_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['ello']['enabled'] == 'yes':
+        assert len(profil3r.ello()['accounts']) == 1
+
+def test_ello_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['ello']['enabled'] == 'yes':
+        assert len(profil3r.ello()['accounts']) == 0
 
 # email
 def test_email_valid():
@@ -216,17 +255,30 @@ def test_instagram_invalid():
     if profil3r.config['plateform']['instagram']['enabled'] == 'yes':
         assert len(profil3r.instagram()['accounts']) == 0
 
+# instructables
+def test_instructables_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['instructables']['enabled'] == 'yes':
+        assert len(profil3r.instructables()['accounts']) == 1
+
+def test_instructables_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['instructables']['enabled'] == 'yes':
+        assert len(profil3r.instructables()['accounts']) == 0
+
 # jeuxvideo
 def test_jeuxvideo_valid():
     profil3r.permutations_list = ['johndoe']
     profil3r.separators = []
-    if profil3r.config['plateform']['jeuxvideo.com']['enabled'] == 'yes':
+    if profil3r.config['plateform']['jeuxvideo']['enabled'] == 'yes':
         assert len(profil3r.jeuxvideo()['accounts']) == 1
 
 def test_jeuxvideo_invalid():
     profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
     profil3r.separators = []
-    if profil3r.config['plateform']['jeuxvideo.com']['enabled'] == 'yes':
+    if profil3r.config['plateform']['jeuxvideo']['enabled'] == 'yes':
         assert len(profil3r.jeuxvideo()['accounts']) == 0
 
 # lesswrong
@@ -572,11 +624,11 @@ def test_xvideos_invalid():
 def test_zeroxzerozerosec_valid():
     profil3r.permutations_list = ['johndoe']
     profil3r.separators = []
-    if profil3r.config['plateform']['0x00sec']['enabled'] == 'yes':
+    if profil3r.config['plateform']['zeroxzerozerosec']['enabled'] == 'yes':
         assert len(profil3r.zeroxzerozerosec()['accounts']) == 1
 
 def test_zeroxzerozerosec_invalid():
     profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
     profil3r.separators = []
-    if profil3r.config['plateform']['0x00sec']['enabled'] == 'yes':
+    if profil3r.config['plateform']['zeroxzerozerosec']['enabled'] == 'yes':
         assert len(profil3r.zeroxzerozerosec()['accounts']) == 0  
