@@ -206,6 +206,54 @@
             "type": "hosting",
             "enabled": "yes"
         },
+        "leagueoflegends": {
+            "rate_limit": 1000,
+            "format": "op.gg/summoner/userName={permutation}",
+            "type": "gaming",
+            "enabled": "yes",
+            "servers": [
+                {
+                    "name": "Korea",
+                    "url": "https://www.{}"
+                },
+                {
+                    "name": "Japan",
+                    "url": "https://jp.{}"
+                },
+                {
+                    "name": "North America",
+                    "url": "https://na.{}"
+                },
+                {
+                    "name": "Europe West",
+                    "url": "https://euw.{}"
+                },
+                {
+                    "name": "Europe Nordic & East",
+                    "url": "https://eune.{}"
+                },
+                {
+                    "name": "Oceania",
+                    "url": "https://oce.{}"
+                },
+                {
+                    "name": "Brazil",
+                    "url": "https://br.{}"
+                },
+                {
+                    "name": "LAS",
+                    "url": "https://las.{}"
+                },
+                {
+                    "name": "LAN",
+                    "url": "https://lan.{}"
+                },
+                {
+                    "name": "Russia",
+                    "url": "https://ru.{}"
+                }
+            ]
+        },
         "steam": {
             "rate_limit": 1000,
             "format": "https://steamcommunity.com/id/{permutation}",
