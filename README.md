@@ -22,11 +22,12 @@
   <a href="#contact">Contact</a>
 </p>
 
-
 Profil3r is an [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) tool that allows you to find potential profiles of a person on social networks, as well as their email addresses. This program also alerts you to the presence of a data leak for the found emails.
 
 ![](doc/demo_cli.gif)
+
 ## 💡 Prerequisites
+
 [Python 3](https://www.python.org/)
 
 ## Installation
@@ -36,134 +37,138 @@ Install Profil3r :
 ```bash
 pip3 install profil3r
 ```
+
 ## Features
 
 #### 📙 Domain
+
 - [x] TLD (.com, .org, .net, etc...)
 
-#### ✉️ Emails 
+#### ✉️ Emails
+
 - [x] Data leaks
 - [x] Emails
 
 #### 🌐 Social
 
-|Service      | Profile Scraping |
-|-------------|------------------|
-| Instagram   | Yes ✔️            |
-| Facebook    | No               |
-| Twitter     | Yes ✔️            |
-| Tiktok      | No               |
-| Pinterest   | No               |
-| Linktr.ee   | Yes ✔️            |
-| MySpace     | Yes ✔️            |
-| Flickr      | Yes ✔️            |
-| DeviantArt  | No               |
-| GoodReads   | No               |
-| Ello        | No               |
+| Service    | Profile Scraping |
+| ---------- | ---------------- |
+| Instagram  | Yes ✔️           |
+| Facebook   | No               |
+| Twitter    | Yes ✔️           |
+| Tiktok     | No               |
+| Pinterest  | No               |
+| Linktr.ee  | Yes ✔️           |
+| MySpace    |  Yes ✔️          |
+| Flickr     |  Yes ✔️          |
+| DeviantArt | No               |
+| GoodReads  | No               |
+| Ello       | No               |
 
 #### 🎵 Music
 
-|Service      | Profile Scraping |
-|-------------|------------------|
-| Soundcloud  | No               |
-| Spotify     | No               |
-| Smule       | No               |
-| bandcamp    | Yes ✔️            |
+| Service    | Profile Scraping |
+| ---------- | ---------------- |
+| Soundcloud | No               |
+| Spotify    | No               |
+| Smule      | No               |
+| bandcamp   |  Yes ✔️          |
 
 #### ‍💻 Programming
 
-|Service      | Profile Scraping |
-|-------------|------------------|
-| Github      | Yes ✔️            |
-| Pastebin    | Yes ✔️            |
-| LessWrong   | Yes ✔️            |
-| Repl.it     | No               |
-| Cracked.to  | No               |
-| PyPi        | Yes ✔️            |
-| NPM         | Yes ✔️            |
-| Asciinema   | No               |
-| CodeMentor  | No               |
+| Service    | Profile Scraping |
+| ---------- | ---------------- |
+| Github     | Yes ✔️           |
+|  Pastebin  | Yes ✔️           |
+|  LessWrong | Yes ✔️           |
+|  Repl.it   | No               |
+| Cracked.to | No               |
+|  PyPi      | Yes ✔️           |
+|  NPM       | Yes ✔️           |
+|  Asciinema | No               |
+| CodeMentor | No               |
 
 #### 💬 Forum
 
-|Service        | Profile Scraping |
-|---------------|------------------|
+| Service       | Profile Scraping |
+| ------------- | ---------------- |
 | 0x00sec.org   | No               |
-| Hackernews    | Yes ✔️            |
+| Hackernews    | Yes ✔️           |
 | Jeuxvideo.com | Yes ✔            |
 
 #### 🗣️ Tchat
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| Skype         | No               |
+| Service | Profile Scraping |
+| ------- | ---------------- |
+| Skype   | No               |
 
 #### 📺 Entertainment
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| Dailymotion   | No               |
-| Vimeo         | No               |
+| Service     | Profile Scraping |
+| ----------- | ---------------- |
+| Dailymotion | No               |
+| Vimeo       | No               |
 
 #### 🚫 Porn
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| PornHub       | Yes ✔            |
-| RedTube       | No               |
-| XVideos       | No               |
+| Service | Profile Scraping |
+| ------- | ---------------- |
+| PornHub | Yes ✔            |
+| RedTube | No               |
+| XVideos | No               |
 
 #### 💸 Money
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| BuyMeACoffee  | No               |
-| Patreon       | No               |
-| CashApp       | No               |
+| Service      | Profile Scraping |
+| ------------ | ---------------- |
+| BuyMeACoffee | No               |
+| Patreon      | No               |
+| CashApp      | No               |
 
 #### 🕸️ Web Hosting
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| AboutMe       | Yes ✔            |
-| SlideShare    | Yes ✔            |
-| WordPress     | No               |
+| Service    | Profile Scraping |
+| ---------- | ---------------- |
+| AboutMe    | Yes ✔            |
+| SlideShare | Yes ✔            |
+| WordPress  | No               |
 
-#### 🎮 Gaming 
+#### 🎮 Gaming
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| Gaming        | No               |
+| Service   | Profile Scraping |
+| --------- | ---------------- |
+| Gaming    | No               |
+| op gg lol | Yes ✔            |
 
 #### 📰 Medias
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| Medium        | No               |
-| Dev.to        | No               |
+| Service | Profile Scraping |
+| ------- | ---------------- |
+| Medium  | No               |
+| Dev.to  | No               |
 
 #### ✈️ Travel
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| TripAdvisor   | No               |
+| Service     | Profile Scraping |
+| ----------- | ---------------- |
+| TripAdvisor | No               |
 
 #### 👥 Collaborative
 
-|Service        | Profile Scraping |
-|---------------|------------------|
+| Service       | Profile Scraping |
+| ------------- | ---------------- |
 | Wikipedia     | No               |
 | Instructables | Yes ✔            |
 
 #### 🏆 CTF
 
-|Service        | Profile Scraping |
-|---------------|------------------|
-| Root-me       | Yes ✔            |
+| Service | Profile Scraping |
+| ------- | ---------------- |
+| Root-me | Yes ✔            |
 
 ## Report
 
-To further analyze the data collected by Profil3r, it is possible to generate reports in different formats using the argument ```-r/--report <path of the reports>```  
+To further analyze the data collected by Profil3r, it is possible to generate reports in different formats using the argument `-r/--report <path of the reports>`
 
 #### JSON
 
@@ -179,7 +184,7 @@ A report in HTML format is generated in the `reports/html` folder, you can acces
 
 ![](doc/demo_web.gif)
 
-## Usage 
+## Usage
 
 ```
 usage: profil3r [-h] -p PROFILE [PROFILE ...] [-r REPORT]
@@ -202,6 +207,6 @@ profil3r -p john doe -r ./OSINT
 
 This project is under the MIT license.
 
-## Contact 
+## Contact
 
 for any remark, suggestion or job offer, you can contact me at r0g3r5@protonmail.com or on twitter [@Rog3rSm1th](https://twitter.com/Rog3rSm1th)
