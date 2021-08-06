@@ -8,9 +8,8 @@ class Crackedto:
         self.delay = config['plateform']['crackedto']['rate_limit'] / 1000
         # https://cracked.to/{username}
         self.format = config['plateform']['crackedto']['format']
-        # cracked.to usernames are not case sensitive
         self.permutations_list = permutations_list
-        # forum
+        # Forum
         self.type = config['plateform']['crackedto']['type']
 
     # Generate all potential cracked.to usernames

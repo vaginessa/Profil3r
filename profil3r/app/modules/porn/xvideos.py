@@ -8,9 +8,9 @@ class Xvideos:
         self.delay = config['plateform']['xvideos']['rate_limit'] / 1000
         # https://www.xvideos.com/profiles/{username}
         self.format = config['plateform']['xvideos']['format']
-        # xvideos usernames are not case sensitive
+        # Xvideos usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # xvideos
+        # Xvideos
         self.type = config['plateform']['xvideos']['type']
 
     # Generate all potential xvideos usernames

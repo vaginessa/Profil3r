@@ -8,9 +8,9 @@ class Patreon:
         self.delay = config['plateform']['patreon']['rate_limit'] / 1000
         # https://patreon.com/{username}
         self.format = config['plateform']['patreon']['format']
-        # patreon usernames are not case sensitive
+        # Patreon usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # money
+        # Money
         self.type = config['plateform']['patreon']['type']
 
     # Generate all potential patreon usernames

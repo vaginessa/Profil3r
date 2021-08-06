@@ -8,9 +8,9 @@ class Smule:
         self.delay = config['plateform']['smule']['rate_limit'] / 1000
         # https://smule.com/{username}
         self.format = config['plateform']['smule']['format']
-        # smule usernames are not case sensitive
+        # Smule usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # music
+        # Music
         self.type = config['plateform']['smule']['type']
 
     # Generate all potential smule usernames

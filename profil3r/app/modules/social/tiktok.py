@@ -8,9 +8,9 @@ class Tiktok:
         self.delay = config['plateform']['tiktok']['rate_limit'] / 1000
         # https://www.tiktok.com/@{username}
         self.format = config['plateform']['tiktok']['format']
-        # tiktok usernames are not case sensitive
+        # Tiktok usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['tiktok']['type']
 
     # Generate all potential twitter usernames

@@ -8,9 +8,9 @@ class Cashapp:
         self.delay = config['plateform']['cashapp']['rate_limit'] / 1000
         # https://cash.app/${username}
         self.format = config['plateform']['cashapp']['format']
-        # cashapp usernames are not case sensitive
+        # Cashapp usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # money
+        # Money
         self.type = config['plateform']['cashapp']['type']
 
     # Generate all potential cashapp usernames

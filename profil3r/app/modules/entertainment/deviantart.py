@@ -8,9 +8,9 @@ class Deviantart:
         self.delay = config['plateform']['deviantart']['rate_limit'] / 1000
         # https://www.deviantart.com/{username}
         self.format = config['plateform']['deviantart']['format']
-        # deviantart usernames are not case sensitive
+        # Deviantart usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # entertainment
+        # Entertainment
         self.type = config['plateform']['deviantart']['type']
 
     # Generate all potential deviantart usernames

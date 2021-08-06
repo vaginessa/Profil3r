@@ -8,9 +8,9 @@ class Facebook:
         self.delay = config['plateform']['facebook']['rate_limit'] / 1000
         # https://facebook.com/{username}
         self.format = config['plateform']['facebook']['format']
-        # facebook usernames are not case sensitive
+        # Facebook usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['facebook']['type']
 
     # Generate all potential facebook usernames

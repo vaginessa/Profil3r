@@ -8,11 +8,11 @@ class Leagueoflegends:
         self.delay = config['plateform']['leagueoflegends']['rate_limit'] / 1000
         # op.gg/summoner/userName={permutation}
         self.format = config['plateform']['leagueoflegends']['format']
-        # league of legends usernames are not case sensitive
+        # League of legends usernames are not case sensitive
         self.permutations_list = permutations_list
-        # gaming
+        # Gaming
         self.type = config['plateform']['leagueoflegends']['type']
-        # servers
+        # Servers
         self.servers = config['plateform']['leagueoflegends']['servers']
 
     # Generate all potential league of legends usernames
@@ -64,4 +64,5 @@ class Leagueoflegends:
                     except:
                         pass
                 time.sleep(self.delay)
+                
         return leagueoflegends_usernames

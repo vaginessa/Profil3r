@@ -10,9 +10,9 @@ class Domain:
         self.format = config['plateform']['domain']['format']
         # Top level domains
         self.tld = config['plateform']['domain']['TLD']
-        # domains are not case sensitive
+        # Domains are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # domain
+        # Domain
         self.type = config['plateform']['domain']['type']
 
     # Generate all potential domains names

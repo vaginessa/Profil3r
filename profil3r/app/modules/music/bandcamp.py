@@ -10,7 +10,7 @@ class Bandcamp:
         # https://bandcamp.com/{username}
         self.format = config['plateform']['bandcamp']['format']
         self.permutations_list = permutations_list
-        # music
+        # Music
         self.type = config['plateform']['bandcamp']['type']
 
     # Generate all potential bandcamp usernames

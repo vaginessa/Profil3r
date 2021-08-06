@@ -10,7 +10,7 @@ class Slideshare:
         # https://slideshare.net/{username}
         self.format = config['plateform']['slideshare']['format']
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['slideshare']['type']
 
     # Generate all potential slideshare usernames

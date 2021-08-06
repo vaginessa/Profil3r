@@ -9,9 +9,9 @@ class Linktree:
         self.delay = config['plateform']['linktree']['rate_limit'] / 1000
         # https://linktr.ee/{username}
         self.format = config['plateform']['linktree']['format']
-        # linktree usernames are not case sensitive
+        # Linktree usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['linktree']['type']
 
     # Generate all potential linktree usernames

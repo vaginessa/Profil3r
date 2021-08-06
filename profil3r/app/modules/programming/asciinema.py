@@ -8,9 +8,9 @@ class Asciinema:
         self.delay = config['plateform']['asciinema']['rate_limit'] / 1000
         # https://asciinema.org/~{username}
         self.format = config['plateform']['asciinema']['format']
-        # asciinema usernames are not case sensitive
+        # Asciinema usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # programming
+        # Programming
         self.type = config['plateform']['asciinema']['type']
 
     # Generate all potential asciinema usernames

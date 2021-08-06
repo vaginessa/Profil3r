@@ -10,7 +10,7 @@ class Codementor:
         # https://www.codementor.io/@{username}
         self.format = config['plateform']['codementor']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['codementor']['type']
 
     # Generate all potential codementor usernames

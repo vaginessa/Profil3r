@@ -9,9 +9,9 @@ class Jeuxvideo:
         self.delay = config['plateform']['jeuxvideo']['rate_limit'] / 1000
         # https://www.jeuxvideo.com/profil/{}?mode=infos
         self.format = config['plateform']['jeuxvideo']['format']
-        # jeuxvideo.com usernames are not case sensitive
+        # Jeuxvideo.com usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        #forum
+        # Forum
         self.type = config['plateform']['jeuxvideo']['type']
 
     # Generate all potential jeuxvideo.com usernames
@@ -55,14 +55,14 @@ class Jeuxvideo:
                 except:
                     pass
                 
-                # scrape the user signature
+                # Scrape the user signature
                 try:
                     user_signature = str(soup.find_all(class_='bloc-signature-desc')[0].find_all("p")[1].get_text()) if soup.find_all(class_='bloc-signature-desc') else None
                     account["signature"] = {"name": "Signature", "value": user_signature}
                 except:
                     pass
 
-                # scrape the user informations
+                # Scrape the user informations
                 try:
                     informations_correspondances = {
                         "Age": "age",

@@ -8,9 +8,9 @@ class Buymeacoffee:
         self.delay = config['plateform']['buymeacoffee']['rate_limit'] / 1000
         # https://buymeacoffee.com/{username}
         self.format = config['plateform']['buymeacoffee']['format']
-        # buymeacoffee usernames are not case sensitive
+        # Buymeacoffee usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # money
+        # Money
         self.type = config['plateform']['buymeacoffee']['type']
 
     # Generate all potential buymeacoffee usernames

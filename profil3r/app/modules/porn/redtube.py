@@ -8,9 +8,9 @@ class Redtube:
         self.delay = config['plateform']['redtube']['rate_limit'] / 1000
         # https://fr.redtube.com/users/{username}
         self.format = config['plateform']['redtube']['format']
-        # redtube usernames are not case sensitive
+        # Redtube usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # porn
+        # Porn
         self.type = config['plateform']['redtube']['type']
 
     # Generate all potential redtube usernames

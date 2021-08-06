@@ -186,7 +186,7 @@
             "rate_limit": 1500,
             "format": "https://smule.com/{permutation}",
             "type": "music",
-            "enabled": "yes"
+            "enabled": "no"
         },
         "aboutme": {
             "rate_limit": 1000,

@@ -9,7 +9,7 @@ class Medium:
         # https://medium.com/@{username}
         self.format = config['plateform']['medium']['format']
         self.permutations_list = permutations_list
-        # medias
+        # Medias
         self.type = config['plateform']['medium']['type']
 
     # Generate all potential medium usernames

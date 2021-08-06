@@ -11,7 +11,7 @@ class Npm:
         # https://www.npmjs.com/~{username}
         self.format = config['plateform']['npm']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['npm']['type']
 
     # Generate all potential npm usernames

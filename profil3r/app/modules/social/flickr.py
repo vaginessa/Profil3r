@@ -11,7 +11,7 @@ class Flickr:
         # https://flickr.com/photos/{username}
         self.format = config['plateform']['flickr']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['flickr']['type']
 
     # Generate all potential flickr usernames

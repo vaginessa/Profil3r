@@ -8,9 +8,9 @@ class Wordpress:
         self.delay = config['plateform']['wordpress']['rate_limit'] / 1000
         # https://{username}.wordpress.com
         self.format = config['plateform']['wordpress']['format']
-        # wordpress usernames are not case sensitive
+        # Wordpress usernames are not case sensitive
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['wordpress']['type']
 
     # Generate all potential wordpress usernames

@@ -10,7 +10,7 @@ class Pypi:
         # https://pypi.org/user/{username}
         self.format = config['plateform']['pypi']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['pypi']['type']
 
     # Generate all potential pypi usernames

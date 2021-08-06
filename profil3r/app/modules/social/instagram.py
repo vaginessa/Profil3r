@@ -10,7 +10,7 @@ class Instagram:
         # https://instagram.com/{username}
         self.format = config['plateform']['instagram']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['instagram']['type']
 
     # Generate all potential instagram usernames

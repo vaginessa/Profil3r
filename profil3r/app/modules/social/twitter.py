@@ -16,10 +16,10 @@ class Twitter:
             "https://nitter.42l.fr/{}",
             "https://nitter.pussthecat.org/{}",
             "https://nitter.nixnet.services/{}",
-            "https://nitter.tedomum.net/{}",
             "https://nitter.fdn.fr/{}",
             "https://nitter.kavin.rocks/{}",
-            "https://tweet.lambda.dance/{}"
+            "https://nitter.actionsack.com/{}",
+            "https://nitter.database.red/{}"
         ]
 
         #social

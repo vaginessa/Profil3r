@@ -11,7 +11,7 @@ class Ello:
         # https://ello.co/{username}
         self.format = config['plateform']['ello']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['ello']['type']
 
     # Generate all potential ello usernames

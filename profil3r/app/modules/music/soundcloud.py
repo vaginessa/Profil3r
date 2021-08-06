@@ -8,9 +8,9 @@ class Soundcloud:
         self.delay = config['plateform']['soundcloud']['rate_limit'] / 1000
         # https://soundcloud.com/{username}
         self.format = config['plateform']['soundcloud']['format']
-        # soundcloud usernames are not case sensitive
+        # Soundcloud usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # music
+        # Music
         self.type = config['plateform']['soundcloud']['type']
 
     # Generate all potential soundcloud usernames

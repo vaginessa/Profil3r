@@ -9,7 +9,7 @@ class Dailymotion:
         # https://dailymotion.com/{username}
         self.format = config['plateform']['dailymotion']['format']
         self.permutations_list = permutations_list
-        # entertainment
+        # Entertainment
         self.type = config['plateform']['dailymotion']['type']
 
     # Generate all potential dailymotion usernames

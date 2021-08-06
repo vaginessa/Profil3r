@@ -9,9 +9,8 @@ class Hackernews:
         self.delay = config['plateform']['hackernews']['rate_limit'] / 1000
         # https://news.ycombinator.com/user?id={username}
         self.format = config['plateform']['hackernews']['format']
-        # hackernews usernames are not case sensitive
         self.permutations_list = permutations_list
-        # forum
+        # Forum
         self.type = config['plateform']['hackernews']['type']
 
     # Generate all potential hackernews usernames

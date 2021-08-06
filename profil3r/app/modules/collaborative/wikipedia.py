@@ -8,9 +8,9 @@ class Wikipedia:
         self.delay = config['plateform']['wikipedia']['rate_limit'] / 1000
         # https://en.wikipedia.org/wiki/User:{username}
         self.format = config['plateform']['wikipedia']['format']
-        # wikipedia usernames are not case sensitive
+        # Wikipedia usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # collaborative
+        # Collaborative
         self.type = config['plateform']['wikipedia']['type']
 
     # Generate all potential wikipedia usernames

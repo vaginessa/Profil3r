@@ -10,7 +10,7 @@ class Aboutme:
         # https://about.me/{username}
         self.format = config['plateform']['aboutme']['format']
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['aboutme']['type']
 
     # Generate all potential aboutme usernames

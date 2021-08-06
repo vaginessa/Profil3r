@@ -9,9 +9,9 @@ class Pornhub:
         self.delay = config['plateform']['pornhub']['rate_limit'] / 1000
         # https://pornhub.com/users/{username}
         self.format = config['plateform']['pornhub']['format']
-        # pornhub usernames are not case sensitive
+        # Pornhub usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # porn
+        # Porn
         self.type = config['plateform']['pornhub']['type']
 
     # Generate all potential pornhub usernames

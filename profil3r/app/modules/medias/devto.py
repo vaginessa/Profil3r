@@ -10,7 +10,7 @@ class Devto:
         # https://dev.to/{username}
         self.format = config['plateform']['devto']['format']
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['devto']['type']
 
     # Generate all potential devto usernames

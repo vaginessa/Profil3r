@@ -10,7 +10,7 @@ class Github:
         # https://github.com/{username}
         self.format = config['plateform']['github']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['github']['type']
 
     # Generate all potential github usernames

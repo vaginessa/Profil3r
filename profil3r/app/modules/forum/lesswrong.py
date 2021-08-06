@@ -11,7 +11,7 @@ class Lesswrong:
         self.format = config['plateform']['lesswrong']['format']
         # LessWrong usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # forum
+        # Forum
         self.type = config['plateform']['lesswrong']['type']
 
     # Generate all potential lesswrong usernames

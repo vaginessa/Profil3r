@@ -10,7 +10,7 @@ class Myspace:
         # https://myspace.com/{username}
         self.format = config['plateform']['myspace']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['myspace']['type']
 
     # Generate all potential myspace usernames

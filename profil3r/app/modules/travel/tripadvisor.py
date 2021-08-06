@@ -11,7 +11,7 @@ class Tripadvisor:
         # https://www.tripadvisor.com/Profile/{username}
         self.format = config['plateform']['tripadvisor']['format']
         self.permutations_list = permutations_list
-        # travel
+        # Travel
         self.type = config['plateform']['tripadvisor']['type']
 
     # Generate all potential tripadvisor usernames

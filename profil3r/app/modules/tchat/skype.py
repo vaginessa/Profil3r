@@ -9,7 +9,7 @@ class Skype:
         # https://www.skypli.com/profile/{}
         self.format = config['plateform']['skype']['format']
         self.permutations_list = permutations_list
-        # tchat
+        # Tchat
         self.type = config['plateform']['skype']['type']
 
     # Generate all potential skype usernames

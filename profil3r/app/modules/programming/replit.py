@@ -9,7 +9,7 @@ class Replit:
         # https://replit.com/@{username}
         self.format = config['plateform']['replit']['format']
         self.permutations_list = permutations_list
-        # programming 
+        # Programming 
         self.type = config['plateform']['replit']['type']
 
     # Generate all potential replit usernames

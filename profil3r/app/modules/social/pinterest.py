@@ -8,9 +8,9 @@ class Pinterest:
         self.delay = config['plateform']['pinterest']['rate_limit'] / 1000
         # https://pinterest.fr/{username}
         self.format = config['plateform']['pinterest']['format']
-        # pinterest usernames are not case sensitive
+        # Pinterest usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['pinterest']['type']
 
     # Generate all potential pinterest usernames

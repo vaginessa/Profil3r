@@ -10,7 +10,7 @@ class Zeroxzerozerosec:
         self.format = config['plateform']['zeroxzerozerosec']['format']
         # 0x00sec.org usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # forum
+        # Forum
         self.type = config['plateform']['zeroxzerozerosec']['type']
 
     # Generate all potential 0x00sec usernames

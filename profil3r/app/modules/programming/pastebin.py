@@ -10,7 +10,7 @@ class Pastebin:
         # https://pastebin.com/u/{username}
         self.format = config['plateform']['pastebin']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['pastebin']['type']
 
     # Generate all potential pastebin usernames

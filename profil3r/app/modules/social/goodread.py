@@ -10,7 +10,7 @@ class Goodread:
         # https://goodread.com/{username}
         self.format = config['plateform']['goodread']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['goodread']['type']
 
     # Generate all potential goodread usernames

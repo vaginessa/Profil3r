@@ -8,9 +8,9 @@ class Steam:
         self.delay = config['plateform']['steam']['rate_limit'] / 1000
         # https://steamcommunity.com/id/{username}
         self.format = config['plateform']['steam']['format']
-        # steam usernames are not case sensitive
+        # Steam usernames are not case sensitive
         self.permutations_list = permutations_list
-        # gaming
+        # Gaming
         self.type = config['plateform']['steam']['type']
 
     # Generate all potential steam usernames

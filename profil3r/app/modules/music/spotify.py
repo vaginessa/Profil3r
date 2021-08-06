@@ -8,9 +8,9 @@ class Spotify:
         self.delay = config['plateform']['spotify']['rate_limit'] / 1000
         # https://open.spotify.com/user/{}
         self.format = config['plateform']['spotify']['format']
-        # spotify usernames are not case sensitive
+        # Spotify usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # spotify
+        # Spotify
         self.type = config['plateform']['spotify']['type']
 
     # Generate all potential spotify usernames
