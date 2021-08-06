@@ -133,7 +133,7 @@ pip3 install profil3r
 
 |Service        | Profile Scraping |
 |---------------|------------------|
-| Gaming        | No               |
+| Steam        | No               |
 | Op.gg         | Yes ✔           |
 
 #### 📰 Medias
