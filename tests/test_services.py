@@ -632,3 +632,16 @@ def test_zeroxzerozerosec_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['zeroxzerozerosec']['enabled'] == 'yes':
         assert len(profil3r.zeroxzerozerosec()['accounts']) == 0  
+
+# Leagueoflegends
+def test_leagueoflegends_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['leagueoflegends']['enabled'] == 'yes' and len(profil3r.config['plateform']['leagueoflegends']['servers']) >= 1:
+        assert len(profil3r.leagueoflegends()['accounts']) >= 1
+
+def test_leagueoflegends_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['leagueoflegends']['enabled'] == 'yes' and len(profil3r.config['plateform']['leagueoflegends']['servers']) >= 1:
+        assert len(profil3r.leagueoflegends()['accounts']) == 0
