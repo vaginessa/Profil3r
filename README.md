@@ -60,6 +60,7 @@ pip3 install profil3r
 | DeviantArt  | No               |
 | GoodReads   | No               |
 | Ello        | No               |
+| Chirpty     | Yes ✔️            |
 
 #### 🎵 Music
 
