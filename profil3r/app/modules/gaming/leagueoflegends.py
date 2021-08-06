@@ -51,7 +51,7 @@ class Leagueoflegends:
                             class_="TierRank") else None
                         last_connection = str(soup.find_all(class_="TimeStamp")[0].find_all(
                             class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
-                        # IF the account exists
+                        # If the account exists
                         if name:
                             account["name"] = {"name": "Name", "value": name}
                             account["location"] = {
