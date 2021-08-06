@@ -32,9 +32,9 @@ class Leagueoflegends:
         }
         possible_usernames_list = self.possible_usernames()
         for username in possible_usernames_list:
-            for serve in self.servers:
+            for server in self.servers:
                 # {subdomain}{username}
-                url = serve["url"].format(username)
+                url = server["url"].format(username)
                 try:
                     r = requests.get(url, timeout=5)
                 except requests.ConnectionError:
@@ -55,7 +55,7 @@ class Leagueoflegends:
                         if name:
                             account["name"] = {"name": "Name", "value": name}
                             account["location"] = {
-                                "name": "Location", "value": serve["name"]}
+                                "name": "Location", "value": server["name"]}
                             account["last_connection"] = {
                                 "name": "Last Connection", "value": last_connection}
                             account["elo"] = {"name": "Elo", "value": elo}
