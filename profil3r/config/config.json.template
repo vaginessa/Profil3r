@@ -44,6 +44,12 @@
             "type": "social",
             "enabled": "yes"
         },
+        "chirpty": {
+            "rate_limit": 1500,
+            "format": "https://chirpty.com/api/circle?screen_name={permutation}",
+            "type": "social",
+            "enabled": "yes"
+        },
         "tiktok": {
             "rate_limit": 1500,
             "format": "https://www.tiktok.com/@{permutation}?",
