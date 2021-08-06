@@ -33,7 +33,7 @@ class Leagueoflegends:
         possible_usernames_list = self.possible_usernames()
         for username in possible_usernames_list:
             for serve in self.servers:
-                # {https://lan}{.op.gg/summoner/userName=name12}
+                # {subdomain}{username}
                 url = serve["url"].format(username)
                 try:
                     r = requests.get(url, timeout=5)
