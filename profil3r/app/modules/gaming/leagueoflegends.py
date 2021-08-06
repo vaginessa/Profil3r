@@ -53,12 +53,12 @@ class Leagueoflegends:
                             class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
                         # If the account exists
                         if name:
-                            account["name"] = {"name": "Name", "value": name}
-                            account["location"] = {
+                            account["user_username"] = {"name": "Name", "value": name}
+                            account["user_location"] = {
                                 "name": "Location", "value": server["name"]}
-                            account["last_connection"] = {
+                            account["user_last_connection"] = {
                                 "name": "Last Connection", "value": last_connection}
-                            account["elo"] = {"name": "Elo", "value": elo}
+                            account["user_elo"] = {"name": "Elo", "value": elo}
                             leagueoflegends_usernames["accounts"].append(
                                 account)
                     except:
