@@ -134,8 +134,8 @@ pip3 install profil3r
 
 |Service        | Profile Scraping |
 |---------------|------------------|
-| Steam        | No               |
-| Op.gg         | Yes ✔           |
+| Steam         | No               |
+| Op.gg         | Yes ✔            |
 
 #### 📰 Medias
 
@@ -143,6 +143,7 @@ pip3 install profil3r
 |---------------|------------------|
 | Medium        | No               |
 | Dev.to        | No               |
+| Hubpages      | Yes ✔            |
 
 #### ✈️ Travel
 

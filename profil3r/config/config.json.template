@@ -361,6 +361,12 @@
             "format": "https://bandcamp.com/{permutation}",
             "type": "music",
             "enabled": "yes"
+        },
+        "hubpages": {
+            "rate_limit": 1000,
+            "format": "https://hubpages.com/@{permutation}",
+            "type": "medias",
+            "enabled": "yes"
         }
     }
 }
