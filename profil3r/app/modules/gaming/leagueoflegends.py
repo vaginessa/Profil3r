@@ -35,7 +35,7 @@ class Leagueoflegends:
             for server in self.servers:
                 # {subdomain}{username}
                 url = server["url"].format(username)
-                r = search_get(username)
+                r = search_get(url)
                 if not r:
                     continue
 
