@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Steam:
@@ -8,9 +8,9 @@ class Steam:
         self.delay = config['plateform']['steam']['rate_limit'] / 1000
         # https://steamcommunity.com/id/{username}
         self.format = config['plateform']['steam']['format']
-        # steam usernames are not case sensitive
+        # Steam usernames are not case sensitive
         self.permutations_list = permutations_list
-        # gaming
+        # Gaming
         self.type = config['plateform']['steam']['type']
 
     # Generate all potential steam usernames
@@ -31,10 +31,9 @@ class Steam:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to steam")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if "The specified profile could not be found" not in r.text:

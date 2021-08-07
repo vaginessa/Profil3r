@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Redtube:
@@ -8,9 +8,9 @@ class Redtube:
         self.delay = config['plateform']['redtube']['rate_limit'] / 1000
         # https://fr.redtube.com/users/{username}
         self.format = config['plateform']['redtube']['format']
-        # redtube usernames are not case sensitive
+        # Redtube usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # porn
+        # Porn
         self.type = config['plateform']['redtube']['type']
 
     # Generate all potential redtube usernames
@@ -31,10 +31,9 @@ class Redtube:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to redtube")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

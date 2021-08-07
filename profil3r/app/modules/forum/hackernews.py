@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -9,9 +9,8 @@ class Hackernews:
         self.delay = config['plateform']['hackernews']['rate_limit'] / 1000
         # https://news.ycombinator.com/user?id={username}
         self.format = config['plateform']['hackernews']['format']
-        # hackernews usernames are not case sensitive
         self.permutations_list = permutations_list
-        # forum
+        # Forum
         self.type = config['plateform']['hackernews']['type']
 
     # Generate all potential hackernews usernames
@@ -32,10 +31,9 @@ class Hackernews:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to hackernews")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.text.find("No such user.") != 0:

@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Wordpress:
@@ -8,9 +8,9 @@ class Wordpress:
         self.delay = config['plateform']['wordpress']['rate_limit'] / 1000
         # https://{username}.wordpress.com
         self.format = config['plateform']['wordpress']['format']
-        # wordpress usernames are not case sensitive
+        # Wordpress usernames are not case sensitive
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['wordpress']['type']
 
     # Generate all potential wordpress usernames
@@ -31,10 +31,9 @@ class Wordpress:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to wordpress")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if "Do you want to register" not in r.text:

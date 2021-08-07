@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Facebook:
@@ -8,9 +8,9 @@ class Facebook:
         self.delay = config['plateform']['facebook']['rate_limit'] / 1000
         # https://facebook.com/{username}
         self.format = config['plateform']['facebook']['format']
-        # facebook usernames are not case sensitive
+        # Facebook usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['facebook']['type']
 
     # Generate all potential facebook usernames
@@ -31,10 +31,9 @@ class Facebook:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to facebook")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

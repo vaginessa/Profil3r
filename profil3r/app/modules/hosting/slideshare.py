@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -10,7 +10,7 @@ class Slideshare:
         # https://slideshare.net/{username}
         self.format = config['plateform']['slideshare']['format']
         self.permutations_list = permutations_list
-        # hosting
+        # Hosting
         self.type = config['plateform']['slideshare']['type']
 
     # Generate all potential slideshare usernames
@@ -31,10 +31,9 @@ class Slideshare:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to slideshare")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

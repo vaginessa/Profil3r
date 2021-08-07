@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Pinterest:
@@ -8,9 +8,9 @@ class Pinterest:
         self.delay = config['plateform']['pinterest']['rate_limit'] / 1000
         # https://pinterest.fr/{username}
         self.format = config['plateform']['pinterest']['format']
-        # pinterest usernames are not case sensitive
+        # Pinterest usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['pinterest']['type']
 
     # Generate all potential pinterest usernames
@@ -31,10 +31,9 @@ class Pinterest:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to pinterest")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -10,7 +10,7 @@ class Instagram:
         # https://instagram.com/{username}
         self.format = config['plateform']['instagram']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['instagram']['type']
 
     # Generate all potential instagram usernames
@@ -34,12 +34,11 @@ class Instagram:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                bibliogram_formatted_URL = bibliogram_URL.format(username.replace("https://instagram.com/", ""))
-                r = requests.get(bibliogram_formatted_URL, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to instagram")
-            
+            bibliogram_formatted_URL = bibliogram_URL.format(username.replace("https://instagram.com/", ""))
+            r = search_get(bibliogram_formatted_URL)
+            if not r:
+                continue
+
             # If the account exists
             if r.status_code == 200:
                 # Account object

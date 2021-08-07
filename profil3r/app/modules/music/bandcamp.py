@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -10,7 +10,7 @@ class Bandcamp:
         # https://bandcamp.com/{username}
         self.format = config['plateform']['bandcamp']['format']
         self.permutations_list = permutations_list
-        # music
+        # Music
         self.type = config['plateform']['bandcamp']['type']
 
     # Generate all potential bandcamp usernames
@@ -31,10 +31,9 @@ class Bandcamp:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to bandcamp")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

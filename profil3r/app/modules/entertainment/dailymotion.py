@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Dailymotion:
@@ -9,7 +9,7 @@ class Dailymotion:
         # https://dailymotion.com/{username}
         self.format = config['plateform']['dailymotion']['format']
         self.permutations_list = permutations_list
-        # entertainment
+        # Entertainment
         self.type = config['plateform']['dailymotion']['type']
 
     # Generate all potential dailymotion usernames
@@ -30,10 +30,9 @@ class Dailymotion:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to dailymotion")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

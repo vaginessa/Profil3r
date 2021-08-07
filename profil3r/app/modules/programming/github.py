@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -10,7 +10,7 @@ class Github:
         # https://github.com/{username}
         self.format = config['plateform']['github']['format']
         self.permutations_list = permutations_list
-        # programming
+        # Programming
         self.type = config['plateform']['github']['type']
 
     # Generate all potential github usernames
@@ -31,10 +31,9 @@ class Github:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to github")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

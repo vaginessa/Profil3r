@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Deviantart:
@@ -8,9 +8,9 @@ class Deviantart:
         self.delay = config['plateform']['deviantart']['rate_limit'] / 1000
         # https://www.deviantart.com/{username}
         self.format = config['plateform']['deviantart']['format']
-        # deviantart usernames are not case sensitive
+        # Deviantart usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # entertainment
+        # Entertainment
         self.type = config['plateform']['deviantart']['type']
 
     # Generate all potential deviantart usernames
@@ -31,10 +31,9 @@ class Deviantart:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to deviantart")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

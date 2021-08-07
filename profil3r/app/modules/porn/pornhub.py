@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -9,9 +9,9 @@ class Pornhub:
         self.delay = config['plateform']['pornhub']['rate_limit'] / 1000
         # https://pornhub.com/users/{username}
         self.format = config['plateform']['pornhub']['format']
-        # pornhub usernames are not case sensitive
+        # Pornhub usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # porn
+        # Porn
         self.type = config['plateform']['pornhub']['type']
 
     # Generate all potential pornhub usernames
@@ -32,10 +32,9 @@ class Pornhub:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to pornhub")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

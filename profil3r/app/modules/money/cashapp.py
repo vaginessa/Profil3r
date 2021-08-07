@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Cashapp:
@@ -8,9 +8,9 @@ class Cashapp:
         self.delay = config['plateform']['cashapp']['rate_limit'] / 1000
         # https://cash.app/${username}
         self.format = config['plateform']['cashapp']['format']
-        # cashapp usernames are not case sensitive
+        # Cashapp usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # money
+        # Money
         self.type = config['plateform']['cashapp']['type']
 
     # Generate all potential cashapp usernames
@@ -31,10 +31,9 @@ class Cashapp:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to cashapp")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Tiktok:
@@ -8,9 +8,9 @@ class Tiktok:
         self.delay = config['plateform']['tiktok']['rate_limit'] / 1000
         # https://www.tiktok.com/@{username}
         self.format = config['plateform']['tiktok']['format']
-        # tiktok usernames are not case sensitive
+        # Tiktok usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['tiktok']['type']
 
     # Generate all potential twitter usernames
@@ -32,10 +32,9 @@ class Tiktok:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to TikTok")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

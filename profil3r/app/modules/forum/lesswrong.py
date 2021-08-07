@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -11,7 +11,7 @@ class Lesswrong:
         self.format = config['plateform']['lesswrong']['format']
         # LessWrong usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # forum
+        # Forum
         self.type = config['plateform']['lesswrong']['type']
 
     # Generate all potential lesswrong usernames
@@ -32,10 +32,9 @@ class Lesswrong:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to lesswrong")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

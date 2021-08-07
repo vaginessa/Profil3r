@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 import re
@@ -11,7 +11,7 @@ class Flickr:
         # https://flickr.com/photos/{username}
         self.format = config['plateform']['flickr']['format']
         self.permutations_list = permutations_list
-        # social
+        # Social
         self.type = config['plateform']['flickr']['type']
 
     # Generate all potential flickr usernames
@@ -32,10 +32,9 @@ class Flickr:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to flickr")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

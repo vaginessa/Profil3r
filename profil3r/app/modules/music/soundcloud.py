@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Soundcloud:
@@ -8,9 +8,9 @@ class Soundcloud:
         self.delay = config['plateform']['soundcloud']['rate_limit'] / 1000
         # https://soundcloud.com/{username}
         self.format = config['plateform']['soundcloud']['format']
-        # soundcloud usernames are not case sensitive
+        # Soundcloud usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # music
+        # Music
         self.type = config['plateform']['soundcloud']['type']
 
     # Generate all potential soundcloud usernames
@@ -31,10 +31,9 @@ class Soundcloud:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to soundcloud")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

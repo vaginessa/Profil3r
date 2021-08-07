@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Crackedto:
@@ -8,9 +8,8 @@ class Crackedto:
         self.delay = config['plateform']['crackedto']['rate_limit'] / 1000
         # https://cracked.to/{username}
         self.format = config['plateform']['crackedto']['format']
-        # cracked.to usernames are not case sensitive
         self.permutations_list = permutations_list
-        # forum
+        # Forum
         self.type = config['plateform']['crackedto']['type']
 
     # Generate all potential cracked.to usernames
@@ -31,10 +30,9 @@ class Crackedto:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to cracked.to")
+            r = search_get(username)
+            if not r:
+                continue
             
              # If the account exists
             if r.status_code == 200:

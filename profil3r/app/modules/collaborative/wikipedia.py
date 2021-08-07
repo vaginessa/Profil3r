@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Wikipedia:
@@ -8,9 +8,9 @@ class Wikipedia:
         self.delay = config['plateform']['wikipedia']['rate_limit'] / 1000
         # https://en.wikipedia.org/wiki/User:{username}
         self.format = config['plateform']['wikipedia']['format']
-        # wikipedia usernames are not case sensitive
+        # Wikipedia usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # collaborative
+        # Collaborative
         self.type = config['plateform']['wikipedia']['type']
 
     # Generate all potential wikipedia usernames
@@ -31,10 +31,10 @@ class Wikipedia:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to wikipedia.org")
+            r = search_get(username)
+            if not r:
+                continue
+                
             
             # If the account exists
             if r.status_code == 200:

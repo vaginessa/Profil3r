@@ -11,9 +11,9 @@ class Email:
         self.domains = config['plateform']['email']['domains']
         # {username}@{domain}
         self.format = config['plateform']['email']['format']
-        # email adresses are not case sensitive
+        # Email adresses are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # email
+        # Email
         self.type = config['plateform']['email']['type']
 
     # Generate all potential adresses

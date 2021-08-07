@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_head
 import time
 
 class Domain:
@@ -10,16 +10,16 @@ class Domain:
         self.format = config['plateform']['domain']['format']
         # Top level domains
         self.tld = config['plateform']['domain']['TLD']
-        # domains are not case sensitive
+        # Domains are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # domain
+        # Domain
         self.type = config['plateform']['domain']['type']
 
     # Generate all potential domains names
     def possible_domains(self):
         possible_domains = []
 
-        # search all TLD (.com, .net, .org...), you can add more in the config.json file
+        # Search all TLD (.com, .net, .org...), you can add more in the config.json file
         for domain in self.tld:
             for permutation in self.permutations_list:
                 possible_domains.append(self.format.format(
@@ -38,13 +38,12 @@ class Domain:
 
         r = None
         for domain in possible_domains_list:
-            try:
-                r = requests.head(domain, timeout=5, allow_redirects=True)
-            except requests.ConnectionError:
-                pass
+            r = search_head(domain)
+            if not r:
+                continue
 
             # If the domain exists
-            if r is not None and r.status_code < 400:
+            if r.status_code < 400:
                 domains_lists["accounts"].append({"value": domain})
             time.sleep(self.delay)
         

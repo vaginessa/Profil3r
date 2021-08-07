@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -9,9 +9,9 @@ class Linktree:
         self.delay = config['plateform']['linktree']['rate_limit'] / 1000
         # https://linktr.ee/{username}
         self.format = config['plateform']['linktree']['format']
-        # linktree usernames are not case sensitive
+        # Linktree usernames are not case sensitive
         self.permutations_list = [perm.lower() for perm in permutations_list]
-        # social
+        # Social
         self.type = config['plateform']['linktree']['type']
 
     # Generate all potential linktree usernames
@@ -32,10 +32,9 @@ class Linktree:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                r = requests.get(username, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to linktree")
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:
