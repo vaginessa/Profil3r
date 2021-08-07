@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Skype:
@@ -33,11 +33,10 @@ class Skype:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                skypli_formatted_URL = skypli_URL.format(username)
-                r = requests.get(skypli_formatted_URL, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to skype")
+            skypli_formatted_URL = skypli_URL.format(username)
+            r = search_get(username)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:

@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
@@ -35,32 +35,25 @@ class Leagueoflegends:
             for server in self.servers:
                 # {subdomain}{username}
                 url = server["url"].format(username)
-                try:
-                    r = requests.get(url, timeout=5)
-                except requests.ConnectionError:
-                    print("failed to connect to op gg")
-                    pass
+                r = search_get(username)
+                if not r:
+                    continue
+
                 if r.ok:
                     account = {}
                     account["value"] = url
                     soup = BeautifulSoup(r.text, 'html.parser')
                     try:
-                        name = str(soup.find_all(class_="Name")[0].get_text()) if soup.find_all(
-                            class_="Name") else None
-                        elo = str(soup.find_all(class_="TierRank")[0].get_text()) if soup.find_all(
-                            class_="TierRank") else None
-                        last_connection = str(soup.find_all(class_="TimeStamp")[0].find_all(
-                            class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
+                        name = str(soup.find_all(class_="Name")[0].get_text()) if soup.find_all(class_="Name") else None
+                        elo = str(soup.find_all(class_="TierRank")[0].get_text()) if soup.find_all(class_="TierRank") else None
+                        last_connection = str(soup.find_all(class_="TimeStamp")[0].find_all(class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
                         # If the account exists
                         if name:
                             account["user_username"] = {"name": "Name", "value": name}
-                            account["user_location"] = {
-                                "name": "Location", "value": server["name"]}
-                            account["user_last_connection"] = {
-                                "name": "Last Connection", "value": last_connection}
+                            account["user_location"] = {"name": "Location", "value": server["name"]}
+                            account["user_last_connection"] = {"name": "Last Connection", "value": last_connection}
                             account["user_elo"] = {"name": "Elo", "value": elo}
-                            leagueoflegends_usernames["accounts"].append(
-                                account)
+                            leagueoflegends_usernames["accounts"].append(account)
                     except:
                         pass
                 time.sleep(self.delay)

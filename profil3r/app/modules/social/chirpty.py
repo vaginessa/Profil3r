@@ -1,4 +1,4 @@
-import requests
+from profil3r.app.search import search_get
 import time
 
 class Chirpty:
@@ -8,9 +8,9 @@ class Chirpty:
         self.delay = config['plateform']['chirpty']['rate_limit'] / 1000
         # https://chirpty.com/api/circle?screen_name={permutation}
         self.format = config['plateform']['chirpty']['format']
-        # chirpty usernames are not case sensitive
+        # Chirpty usernames are not case sensitive
         self.permutations_list = permutations_list
-        #social
+        # Social
         self.type = config['plateform']['chirpty']['type']
 
     # Generate all potential chirpty usernames
@@ -31,10 +31,10 @@ class Chirpty:
         possible_usernames_list = self.possible_usernames()
         user_circle_twitter="https://twitter.com/{}"
         for username in possible_usernames_list:
-            try:
-                r=requests.get(username,timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to chirpty")  
+            r = search_get(username)
+            if not r:
+                continue
+
             if r.ok:
                 lvl=0
                 try:
@@ -49,7 +49,7 @@ class Chirpty:
                                 "total_interaction": {"name": "Total interaction", "value":str(circle["total"])} 
                             })                    
                 except:
-                    print("not found")
                     pass
             time.sleep(self.delay)
+
         return chirpty_usernames   

@@ -1,3 +1,4 @@
+from profil3r.app.search import search_get
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -53,11 +54,10 @@ class Twitter:
         possible_usernames_list = self.possible_usernames()
 
         for username in possible_usernames_list:
-            try:
-                nitter_formatted_URL = nitter_URL.format(username.replace("https://twitter.com/", ""))
-                r = requests.get(nitter_formatted_URL, timeout=5)
-            except requests.ConnectionError:
-                print("failed to connect to twitter")
+            nitter_formatted_URL = nitter_URL.format(username.replace("https://twitter.com/", ""))
+            r = search_get(nitter_formatted_URL)
+            if not r:
+                continue
             
             # If the account exists
             if r.status_code == 200:
