@@ -212,6 +212,12 @@
             "type": "hosting",
             "enabled": "yes"
         },
+        "dota2": {
+            "rate_limit": 1000,
+            "format": "https://api.opendota.com/api/search?q={permutation}",
+            "type": "gaming",
+            "enabled": "yes"
+        },
         "leagueoflegends": {
             "rate_limit": 1000,
             "format": "op.gg/summoner/userName={permutation}",

@@ -671,3 +671,16 @@ def test_chirpty_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['huppages']['enabled'] == 'yes':
         assert len(profil3r.chirpty()['accounts']) == 0
+        
+#dota2
+def test_dota2_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dota2']['enabled'] == 'yes':
+        assert len(profil3r.dota2()['accounts']) >= 1
+        
+def test_dota2_invalid():
+    profil3r.permutations_list = ['d']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dota2']['enabled'] == 'yes':
+        assert len(profil3r.dota2()['accounts']) == 0
