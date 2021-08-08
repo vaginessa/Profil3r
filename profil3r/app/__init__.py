@@ -35,7 +35,7 @@ class Core(object):
             self.modules[module] = {"method": getattr(self, module)}
 
 # Automatic creation of the methods used to scrape the different services
-module_regexp = re.compile("[a-z]+\.py")
+module_regexp = re.compile("[a-z0-9]+\.py")
 module_category_regexp = re.compile("[a-z]+")
 
 # Modules are in profil3r/app/modules/
