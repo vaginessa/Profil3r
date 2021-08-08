@@ -660,19 +660,19 @@ def test_chirpty_invalid():
         assert len(profil3r.chirpty()['accounts']) == 0
 
 # hubpages
-def test_chirpty_valid():
+def test_hubpages_valid():
     profil3r.permutations_list = ['johndoe']
     profil3r.separators = []
-    if profil3r.config['plateform']['hugpages']['enabled'] == 'yes':
+    if profil3r.config['plateform']['hubpages']['enabled'] == 'yes':
         assert len(profil3r.chirpty()['accounts']) >= 1
         
-def test_chirpty_invalid():
+def test_hubpages_invalid():
     profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
     profil3r.separators = []
-    if profil3r.config['plateform']['huppages']['enabled'] == 'yes':
+    if profil3r.config['plateform']['hubpages']['enabled'] == 'yes':
         assert len(profil3r.chirpty()['accounts']) == 0
         
-#dota2
+# dota2
 def test_dota2_valid():
     profil3r.permutations_list = ['johndoe']
     profil3r.separators = []
