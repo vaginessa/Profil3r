@@ -39,23 +39,32 @@ class Leagueoflegends:
                 if not r:
                     continue
 
-                if r.ok:
+                if r.status_code == 200:
+                    # Account object
                     account = {}
+
+                    # Get the URL
                     account["value"] = url
+
+                    # Parse HTML response content with beautiful soup 
                     soup = BeautifulSoup(r.text, 'html.parser')
+
+                    # Scrape the user informations
                     try:
-                        name = str(soup.find_all(class_="Name")[0].get_text()) if soup.find_all(class_="Name") else None
-                        elo = str(soup.find_all(class_="TierRank")[0].get_text()) if soup.find_all(class_="TierRank") else None
-                        last_connection = str(soup.find_all(class_="TimeStamp")[0].find_all(class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
+                        user_username = str(soup.find_all(class_="Name")[0].get_text()) if soup.find_all(class_="Name") else None
+                        user_elo_score = str(soup.find_all(class_="TierRank")[0].get_text()) if soup.find_all(class_="TierRank") else None
+                        user_last_connection = str(soup.find_all(class_="TimeStamp")[0].find_all(class_="_timeago")[0].get_text()) if soup.find_all(class_="TimeStamp") else None
                         # If the account exists
-                        if name:
-                            account["user_username"] = {"name": "Name", "value": name}
-                            account["user_location"] = {"name": "Location", "value": server["name"]}
-                            account["user_last_connection"] = {"name": "Last Connection", "value": last_connection}
-                            account["user_elo"] = {"name": "Elo", "value": elo}
+                        if user_username:
+                            account["user_username"] = {"name": "Name", "value": user_username}
+                            account["user_elo"] = {"name": "Elo", "value": user_elo_score}
+                            account["user_last_connection"] = {"name": "Last Connection", "value": user_last_connection}
+
+                            # Append the account to the accounts table
                             leagueoflegends_usernames["accounts"].append(account)
                     except:
                         pass
+
                 time.sleep(self.delay)
                 
         return leagueoflegends_usernames

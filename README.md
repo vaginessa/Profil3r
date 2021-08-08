@@ -136,6 +136,7 @@ pip3 install profil3r
 |---------------|------------------|
 | Steam         | No               |
 | Op.gg         | Yes ✔            |
+| Dota2         | Yes ✔            |
 
 #### 📰 Medias
 
