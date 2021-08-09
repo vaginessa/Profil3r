@@ -165,6 +165,12 @@ pip3 install profil3r
 |---------------|------------------|
 | Root-me       | Yes ✔            |
 
+#### 👀 Privacy
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Keybase       | Yes ✔            |
+
 ## Report
 
 To further analyze the data collected by Profil3r, it is possible to generate reports in different formats using the argument ```-r/--report <path of the reports>```  

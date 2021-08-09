@@ -684,3 +684,16 @@ def test_dota2_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['dota2']['enabled'] == 'yes':
         assert len(profil3r.dota2()['accounts']) == 0
+
+# keybase
+def test_keybase_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['keybase']['enabled'] == 'yes':
+        assert len(profil3r.keybase()['accounts']) >= 1
+        
+def test_keybase_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['keybase']['enabled'] == 'yes':
+        assert len(profil3r.keybase()['accounts']) == 0
