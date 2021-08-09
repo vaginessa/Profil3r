@@ -379,6 +379,12 @@
             "format": "https://keybase.io/{permutation}",
             "type": "privacy",
             "enabled": "yes"
+        },
+        "dribbble": {
+            "rate_limit": 1000,
+            "format": "https://dribbble.com/{permutation}/about",
+            "type": "entertainment",
+            "enabled": "yes"
         }
     }
 }

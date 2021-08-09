@@ -105,6 +105,8 @@ pip3 install profil3r
 |---------------|------------------|
 | Dailymotion   | No               |
 | Vimeo         | No               |
+| DeviantArt    | Yes ✔            |
+| Dribbble      | Yes ✔            |
 
 #### 🚫 Porn
 

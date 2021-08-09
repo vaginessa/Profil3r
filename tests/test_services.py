@@ -6,8 +6,6 @@ CONFIG = '{}/../profil3r/config/config.json'.format(os.path.dirname(os.path.real
 profil3r = Core(CONFIG)
 profil3r.load_config()
 
-print(profil3r.config['plateform']['aboutme']['enabled'])
-
 # aboutme
 def test_aboutme_valid():
     profil3r.permutations_list = ['johndoe']
@@ -697,3 +695,16 @@ def test_keybase_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['keybase']['enabled'] == 'yes':
         assert len(profil3r.keybase()['accounts']) == 0
+
+# dribbble
+def test_dribbble_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dribbble']['enabled'] == 'yes':
+        assert len(profil3r.dribbble()['accounts']) >= 1
+        
+def test_dribbble_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dribbble']['enabled'] == 'yes':
+        assert len(profil3r.dribbble()['accounts']) == 0
