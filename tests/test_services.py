@@ -708,3 +708,16 @@ def test_dribbble_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['dribbble']['enabled'] == 'yes':
         assert len(profil3r.dribbble()['accounts']) == 0
+
+# kongregate
+def test_kongregate_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['kongregate']['enabled'] == 'yes':
+        assert len(profil3r.kongregate()['accounts']) >= 1
+        
+def test_kongregate_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['kongregate']['enabled'] == 'yes':
+        assert len(profil3r.kongregate()['accounts']) == 0

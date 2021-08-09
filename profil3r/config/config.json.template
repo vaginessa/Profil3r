@@ -385,6 +385,12 @@
             "format": "https://dribbble.com/{permutation}/about",
             "type": "entertainment",
             "enabled": "yes"
+        },
+        "kongregate": {
+            "rate_limit": 1000,
+            "format": "https://www.kongregate.com/accounts/{permutation}",
+            "type": "gaming",
+            "enabled": "yes"
         }
     }
 }
