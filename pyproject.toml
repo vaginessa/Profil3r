@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "profil3r"
-version = "1.4.7"
+version = "1.4.8"
 description = "Find the profiles of a person on social networks, as well as their email addresses"
 authors = ["Rog3rSm1th <r0g3r5@protonmail.com>"]
 license = "MIT"
