@@ -31,11 +31,21 @@ Profil3r is an [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) t
 
 ## Installation
 
-Install Profil3r :
+#### Install with pip (recommended)
 
 ```bash
 pip3 install profil3r
 ```
+
+#### Or build from source
+
+Recommended for developers. It automatically clones the main branch from the Profil3r repo, and installs from source.
+
+```bash
+# Automatically clone the Profil3r repository and install profil3r from source
+bash <(wget -q https://raw.githubusercontent.com/Rog3rSm1th/Profil3r/main/scripts/autoinstall.sh -O -)
+```
+
 ## Features
 
 #### 📙 Domain
@@ -170,7 +180,7 @@ pip3 install profil3r
 |---------------|------------------|
 | Root-me       | Yes ✔            |
 
-#### 👀 Privacy
+#### 👀 Privacy
 
 |Service        | Profile Scraping |
 |---------------|------------------|
