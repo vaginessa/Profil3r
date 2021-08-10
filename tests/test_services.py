@@ -6,8 +6,6 @@ CONFIG = '{}/../profil3r/config/config.json'.format(os.path.dirname(os.path.real
 profil3r = Core(CONFIG)
 profil3r.load_config()
 
-print(profil3r.config['plateform']['aboutme']['enabled'])
-
 # aboutme
 def test_aboutme_valid():
     profil3r.permutations_list = ['johndoe']
@@ -684,3 +682,68 @@ def test_dota2_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['dota2']['enabled'] == 'yes':
         assert len(profil3r.dota2()['accounts']) == 0
+
+# keybase
+def test_keybase_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['keybase']['enabled'] == 'yes':
+        assert len(profil3r.keybase()['accounts']) >= 1
+        
+def test_keybase_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['keybase']['enabled'] == 'yes':
+        assert len(profil3r.keybase()['accounts']) == 0
+
+# dribbble
+def test_dribbble_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dribbble']['enabled'] == 'yes':
+        assert len(profil3r.dribbble()['accounts']) >= 1
+        
+def test_dribbble_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['dribbble']['enabled'] == 'yes':
+        assert len(profil3r.dribbble()['accounts']) == 0
+
+# kongregate
+def test_kongregate_valid():
+    profil3r.permutations_list = ['johndoe']
+    profil3r.separators = []
+    if profil3r.config['plateform']['kongregate']['enabled'] == 'yes':
+        assert len(profil3r.kongregate()['accounts']) >= 1
+        
+def test_kongregate_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['kongregate']['enabled'] == 'yes':
+        assert len(profil3r.kongregate()['accounts']) == 0
+
+# livejournal
+def test_livejournal_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['livejournal']['enabled'] == 'yes':
+        assert len(profil3r.livejournal()['accounts']) >= 1
+        
+def test_livejournal_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['livejournal']['enabled'] == 'yes':
+        assert len(profil3r.livejournal()['accounts']) == 0
+
+# ifttt
+def test_ifttt_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['ifttt']['enabled'] == 'yes':
+        assert len(profil3r.ifttt()['accounts']) >= 1
+        
+def test_ifttt_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['ifttt']['enabled'] == 'yes':
+        assert len(profil3r.ifttt()['accounts']) == 0

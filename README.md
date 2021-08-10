@@ -31,11 +31,21 @@ Profil3r is an [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) t
 
 ## Installation
 
-Install Profil3r :
+#### Install with pip (recommended)
 
 ```bash
 pip3 install profil3r
 ```
+
+#### Or build from source
+
+Recommended for developers. It automatically clones the main branch from the Profil3r repo, and installs from source.
+
+```bash
+# Automatically clone the Profil3r repository and install profil3r from source
+bash <(wget -q https://raw.githubusercontent.com/Rog3rSm1th/Profil3r/main/scripts/autoinstall.sh -O -)
+```
+
 ## Features
 
 #### 📙 Domain
@@ -84,6 +94,7 @@ pip3 install profil3r
 | NPM         | Yes ✔️            |
 | Asciinema   | No               |
 | CodeMentor  | No               |
+| Ifttt       | No               |
 
 #### 💬 Forum
 
@@ -105,6 +116,8 @@ pip3 install profil3r
 |---------------|------------------|
 | Dailymotion   | No               |
 | Vimeo         | No               |
+| DeviantArt    | Yes ✔            |
+| Dribbble      | Yes ✔            |
 
 #### 🚫 Porn
 
@@ -137,6 +150,7 @@ pip3 install profil3r
 | Steam         | No               |
 | Op.gg         | Yes ✔            |
 | Dota2         | Yes ✔            |
+| Kongregate    | Yes ✔            |
 
 #### 📰 Medias
 
@@ -145,6 +159,7 @@ pip3 install profil3r
 | Medium        | No               |
 | Dev.to        | No               |
 | Hubpages      | Yes ✔            |
+| LiveJournal   | No               |
 
 #### ✈️ Travel
 
@@ -164,6 +179,12 @@ pip3 install profil3r
 |Service        | Profile Scraping |
 |---------------|------------------|
 | Root-me       | Yes ✔            |
+
+#### 👀 Privacy
+
+|Service        | Profile Scraping |
+|---------------|------------------|
+| Keybase       | Yes ✔            |
 
 ## Report
 

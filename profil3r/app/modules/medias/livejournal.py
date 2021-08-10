@@ -2,18 +2,18 @@ from profil3r.app.search import search_get
 from bs4 import BeautifulSoup
 import time
 
-class Devto:
+class Livejournal:
 
     def __init__(self, config, permutations_list):
         # 1000 ms
-        self.delay = config['plateform']['devto']['rate_limit'] / 1000
-        # https://dev.to/{username}
-        self.format = config['plateform']['devto']['format']
+        self.delay = config['plateform']['livejournal']['rate_limit'] / 1000
+        # https://{permutation}.livejournal.com/
+        self.format = config['plateform']['livejournal']['format']
         self.permutations_list = permutations_list
         # Medias
-        self.type = config['plateform']['devto']['type']
+        self.type = config['plateform']['livejournal']['type']
 
-    # Generate all potential devto usernames
+    # Generate all potential livejournal usernames
     def possible_usernames(self):
         possible_usernames = []
 
@@ -24,7 +24,7 @@ class Devto:
         return possible_usernames
 
     def search(self):
-        devto_usernames = {
+        livejournal_usernames = {
             "type": self.type,
             "accounts": []
         }
@@ -37,8 +37,8 @@ class Devto:
             
             # If the account exists
             if r.status_code == 200:
-                devto_usernames["accounts"].append({"value": username})
+                livejournal_usernames["accounts"].append({"value": username})
 
             time.sleep(self.delay)
         
-        return devto_usernames
+        return livejournal_usernames

@@ -2,10 +2,16 @@ from profil3r.app.colors import Colors
 
 # Sanitize and format data obtained from scrapping
 def format(result):
-    if not isinstance(result, list):
-        return result.replace('\n', ' ').strip()
-    else:
+    if isinstance(result, list):
         return str(len(result)) + " results"
+    elif result is None:
+        return None
+    else:
+        result = result.replace('\n', ' ').strip()
+        if result == "":
+            return None
+        else:
+            return result
 
 def print_results(self, element):
     if element in self.result:
@@ -30,11 +36,10 @@ def print_results(self, element):
 
                 # print scraped element(s) (except value that was already printed)
                 for index, element in list(account.items())[1:]:
-                    
-                    if element["value"] is not None:
-                        element_value = format(element["value"])
-                        if not isinstance(element["value"], list):
-                            print(Colors.BOLD + "   |   ├── " + Colors.ENDC + Colors.HEADER + element["name"] + " : " + element_value + Colors.ENDC)
+                    element_value = format(element["value"])
+                
+                    if element_value is not None:
+                        print(Colors.BOLD + "   |   ├── " + Colors.ENDC + Colors.HEADER + element["name"] + " : " + element_value + Colors.ENDC)
         # Emails case
         else:
             possible_emails_list = [account["value"] for account in element_results["accounts"]]

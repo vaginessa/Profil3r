@@ -373,6 +373,36 @@
             "format": "https://hubpages.com/@{permutation}",
             "type": "medias",
             "enabled": "yes"
+        },
+        "keybase": {
+            "rate_limit": 1000,
+            "format": "https://keybase.io/{permutation}",
+            "type": "privacy",
+            "enabled": "yes"
+        },
+        "dribbble": {
+            "rate_limit": 1000,
+            "format": "https://dribbble.com/{permutation}/about",
+            "type": "entertainment",
+            "enabled": "yes"
+        },
+        "kongregate": {
+            "rate_limit": 1000,
+            "format": "https://www.kongregate.com/accounts/{permutation}",
+            "type": "gaming",
+            "enabled": "yes"
+        },
+        "livejournal": {
+            "rate_limit": 1000,
+            "format": "https://{permutation}.livejournal.com/",
+            "type": "medias",
+            "enabled": "yes"
+        },
+        "ifttt": {
+            "rate_limit": 1000,
+            "format": "https://ifttt.com/p/{permutation}",
+            "type": "social",
+            "enabled": "yes"
         }
     }
 }
