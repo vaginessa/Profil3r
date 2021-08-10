@@ -84,6 +84,7 @@ pip3 install profil3r
 | NPM         | Yes ✔️            |
 | Asciinema   | No               |
 | CodeMentor  | No               |
+| Ifttt       | No               |
 
 #### 💬 Forum
 

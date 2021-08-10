@@ -397,6 +397,12 @@
             "format": "https://{permutation}.livejournal.com/",
             "type": "medias",
             "enabled": "yes"
+        },
+        "ifttt": {
+            "rate_limit": 1000,
+            "format": "https://ifttt.com/p/{permutation}",
+            "type": "social",
+            "enabled": "yes"
         }
     }
 }
