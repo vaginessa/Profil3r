@@ -148,6 +148,7 @@ pip3 install profil3r
 | Medium        | No               |
 | Dev.to        | No               |
 | Hubpages      | Yes ✔            |
+| LiveJournal   | No               |
 
 #### ✈️ Travel
 

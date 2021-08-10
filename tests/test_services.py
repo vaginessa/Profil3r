@@ -721,3 +721,16 @@ def test_kongregate_invalid():
     profil3r.separators = []
     if profil3r.config['plateform']['kongregate']['enabled'] == 'yes':
         assert len(profil3r.kongregate()['accounts']) == 0
+
+# livejournal
+def test_livejournal_valid():
+    profil3r.permutations_list = ['john']
+    profil3r.separators = []
+    if profil3r.config['plateform']['livejournal']['enabled'] == 'yes':
+        assert len(profil3r.livejournal()['accounts']) >= 1
+        
+def test_livejournal_invalid():
+    profil3r.permutations_list = ['Th1s1sN0t4V4l1d4cc0unt123']
+    profil3r.separators = []
+    if profil3r.config['plateform']['livejournal']['enabled'] == 'yes':
+        assert len(profil3r.livejournal()['accounts']) == 0

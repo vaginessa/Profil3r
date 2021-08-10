@@ -391,6 +391,12 @@
             "format": "https://www.kongregate.com/accounts/{permutation}",
             "type": "gaming",
             "enabled": "yes"
+        },
+        "livejournal": {
+            "rate_limit": 1000,
+            "format": "https://{permutation}.livejournal.com/",
+            "type": "medias",
+            "enabled": "yes"
         }
     }
 }
