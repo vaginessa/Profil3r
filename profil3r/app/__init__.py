@@ -14,6 +14,7 @@ class Core(object):
     from ._logo import print_logo
     from ._argparse import parse_arguments
     from ._config import load_config
+    from ._filter import filter
 
     def __init__(self, config_path):
         self.config_path = config_path
