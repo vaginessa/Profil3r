@@ -8,9 +8,12 @@ def parse_arguments(self):
 
     parser.add_argument('-p', '--profile', required=True, nargs='+', help="parts of the username that you are looking for. e.g. john doe")
     parser.add_argument('-r', '--report', required=False, help="path to the report directory. e.g. ./OSINT")
+    parser.add_argument('-s', '--services', required=False, help="list of services to search, separated by a comma. e.g. facebook,twitter,email")
     args = parser.parse_args()
     
     # Items passed from the command line
     self.items = args.profile
     # Report path passed from the command line
     self.report_path = args.report.rstrip('/') if args.report is not None else args.report
+    # List of services to search
+    self.cli_modules = [service.strip() for service in args.services.split(',')] if args.services is not None else None 

@@ -8,7 +8,15 @@ def run(self):
     self.load_config()
     self.print_logo()
 
-    self.menu()
+    # Select modules from command line argument
+    if self.cli_modules:
+        self.modules_update(self.cli_modules)
+    # Select modules from menu
+    else:
+        self.menu()
+        
+    modules = self.get_report_modules()
+
     self.get_permutations()
 
     # Keep only the most plausibles permutations if there are too many
@@ -20,8 +28,6 @@ def run(self):
                 break
             if filter_choice.lower() == "n":
                 break
-
-    modules = self.get_report_modules()
 
     if modules:
         # Number of permutations to test per service
