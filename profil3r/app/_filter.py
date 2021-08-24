@@ -1,8 +1,6 @@
 import re
 from collections import OrderedDict
 import math
-import sys
-import math
 
 # To compute the probability that a string of characters is an username, 
 # we use the transition matrix associated to the Markov chain of usernames

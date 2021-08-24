@@ -12,5 +12,5 @@ rm dist/*
 echo "[+] Building..."
 poetry build
 echo "[+] Installing Profil3r..."
-find ./dist -name 'profil3r-1.4.*.whl' -exec pip3 install {} \;
+find ./dist -name 'profil3r-1.*.*.whl' -exec pip3 install {} \;
 echo "[+] Installation completed"

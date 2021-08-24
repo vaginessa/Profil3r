@@ -14,20 +14,25 @@ def run(self):
     # Select modules from menu
     else:
         self.menu()
-        
+
     modules = self.get_report_modules()
 
     self.get_permutations()
 
     # Keep only the most plausibles permutations if there are too many
-    if (len(self.permutations_list) > 12):
-        while True:
-            filter_choice = input("\nThere are a lot of permutation ({}), do you want to keep only the most plausibles ones ? (".format(len(self.permutations_list)) + Colors.OKGREEN + "Y" + Colors.ENDC + "/" + Colors.FAIL + "n" + Colors.ENDC + ")")
-            if filter_choice.lower() == "y":
-                self.filter()
-                break
-            if filter_choice.lower() == "n":
-                break
+    if len(self.permutations_list) >= 12:
+        # If the user has passed the --filter argument
+        if self.filter_results:
+            self.filter()
+        # Ask user to filter permutations
+        else:
+            while True:
+                filter_choice = input("\nThere are a lot of permutation ({}), do you want to keep only the most plausibles ones ? (".format(len(self.permutations_list)) + Colors.OKGREEN + "Y" + Colors.ENDC + "/" + Colors.FAIL + "n" + Colors.ENDC + ")")
+                if filter_choice.lower() == "y":
+                    self.filter()
+                    break
+                if filter_choice.lower() == "n":
+                    break
 
     if modules:
         # Number of permutations to test per service
