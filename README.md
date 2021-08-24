@@ -208,20 +208,25 @@ A report in HTML format is generated in the `reports/html` folder, you can acces
 ## Usage 
 
 ```
-usage: profil3r [-h] -p PROFILE [PROFILE ...] [-r REPORT]
+usage: profil3r [-h] -p PROFILE [PROFILE ...] [-r REPORT] [--services SERVICES [SERVICES ...]] [-f] [-s SEPARATORS [SEPARATORS ...]]
 
 optional arguments:
   -h, --help            show this help message and exit
   -p PROFILE [PROFILE ...], --profile PROFILE [PROFILE ...]
-                        parts of the username that you are looking for, e.g. : john doe
+                        parts of the username that you are looking for. e.g. john doe
   -r REPORT, --report REPORT
-                        path to the report directory, e.g. : ./OSINT
+                        path to the report directory. e.g. ./OSINT
+  --services SERVICES [SERVICES ...]
+                        list of services to search, separated by a comma. e.g. facebook,twitter,email
+  -f, --filter          filters the permutations by keeping only the most plausible ones
+  -s SEPARATORS [SEPARATORS ...], --separators SEPARATORS [SEPARATORS ...]
+                        separators. e.g . - _
 ```
 
 ## 📚 Example
 
 ```bash
-profil3r -p john doe -r ./OSINT
+profil3r -p john doe --services facebook twitter email -r ./OSINT
 ```
 
 ## 📝 License
