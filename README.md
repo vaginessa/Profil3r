@@ -71,6 +71,7 @@ bash <(wget -q https://raw.githubusercontent.com/Rog3rSm1th/Profil3r/main/script
 | GoodReads   | No               |
 | Ello        | No               |
 | Chirpty     | Yes ✔️            |
+| Disqus      | No               |
 
 #### 🎵 Music
 

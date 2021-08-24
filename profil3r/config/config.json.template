@@ -403,6 +403,12 @@
             "format": "https://ifttt.com/p/{permutation}",
             "type": "social",
             "enabled": "yes"
+        },
+        "disqus": {
+            "rate_limit": 1000,
+            "format": "https://disqus.com/by/{permutation}",
+            "type": "social",
+            "enabled": "yes"
         }
     }
 }
