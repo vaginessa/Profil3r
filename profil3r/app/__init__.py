@@ -5,7 +5,7 @@ from pathlib import Path
 
 class Core(object):
 
-    from ._menu import menu
+    from ._menu import services_menu, separators_menu
     from ._permutations import get_permutations
     from ._results import print_results
     from ._run import run

@@ -2,20 +2,25 @@ from profil3r.app.colors import Colors
 import threading
 
 def run(self):
+    self.load_config()
+
     # Get arguments from the command line
     self.parse_arguments()
-    
-    self.load_config()
+
     self.print_logo()
 
     # Select modules from command line argument
-    if self.cli_modules:
-        self.modules_update(self.cli_modules)
+    if self.cli_services:
+        self.modules_update(self.cli_services)
     # Select modules from menu
     else:
-        self.menu()
+        self.services_menu()
 
     modules = self.get_report_modules()
+
+    # Select separators from command line argument
+    if not self.separators:
+        self.separators_menu()
 
     self.get_permutations()
 
