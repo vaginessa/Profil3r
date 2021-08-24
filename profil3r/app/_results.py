@@ -1,5 +1,6 @@
 from profil3r.app.colors import Colors
 
+
 # Sanitize and format data obtained from scrapping
 def format(result):
     if isinstance(result, list):
@@ -21,25 +22,25 @@ def print_results(self, element):
 
         # No results
         if not element_results["accounts"]:
-            print("\n" + Colors.BOLD + "└──" + Colors.ENDC + Colors.OKGREEN + " {} ❌".format(element.upper()) + Colors.ENDC + Colors.FAIL + " (No results)" + Colors.ENDC)
+            print("\n" + Colors.OKGREEN + "{} ".format(element.upper()) + Colors.ENDC + Colors.FAIL + "× (No results)" + Colors.ENDC)
             return 
         # Results
         else: 
-            print("\n" + Colors.BOLD + "└──" + Colors.ENDC + Colors.OKGREEN + " {} ✔️".format(element.upper()) + Colors.ENDC)
+            print("\n" + Colors.OKGREEN + "{} ✓".format(element.upper()) + Colors.ENDC)
 
         # General case
         if element != "email":
             
             # Data scraped on the websites
             for account in element_results["accounts"]:
-                print(Colors.BOLD + "   └── " + Colors.ENDC + Colors.OKCYAN + account["value"] + Colors.ENDC)
+                print("➜ " + Colors.OKCYAN + account["value"] + Colors.ENDC)
 
                 # print scraped element(s) (except value that was already printed)
                 for index, element in list(account.items())[1:]:
                     element_value = format(element["value"])
                 
                     if element_value is not None:
-                        print(Colors.BOLD + "   |   ├── " + Colors.ENDC + Colors.HEADER + element["name"] + " : " + element_value + Colors.ENDC)
+                        print("├── " + Colors.ENDC + Colors.BOLD + element["name"] + " : "  + Colors.ENDC + element_value)
         # Emails case
         else:
             possible_emails_list = [account["value"] for account in element_results["accounts"]]
@@ -47,11 +48,11 @@ def print_results(self, element):
             for account in element_results["accounts"]:
                 # We pad the emails with spaces for better visibility
                 longest_email_length = len(max(possible_emails_list))
-                email = account["value"].ljust(longest_email_length + 5)
+                email = account["value"].ljust(longest_email_length + 7)
 
                 # Breached account
                 if account["breached"]:
-                    print(Colors.BOLD + "   ├──" + Colors.ENDC + Colors.OKCYAN + email + Colors.FAIL + "[BREACHED]" + Colors.ENDC)
+                    print("➜ " + email + Colors.FAIL + "[BREACHED]" + Colors.ENDC)
                 # Safe account
                 else:
-                    print(Colors.BOLD + "   ├──" + Colors.ENDC + Colors.OKCYAN + email + Colors.OKGREEN + "[SAFE]" + Colors.ENDC)
+                    print("➜ " + email + Colors.OKGREEN + "[SAFE]" + Colors.ENDC)

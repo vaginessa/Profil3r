@@ -10,5 +10,4 @@ def print_logo(self):
                                        
 ''' + Colors.ENDC)
 
-    print(Colors.HEADER + "Version {version} - Developped by Rog3rSm1th".format(version=self.version))
-    print("You can buy me a coffee at : https://www.buymeacoffee.com/givocefo\n" + Colors.ENDC)
+    print(Colors.HEADER + "Version {version} - Developped by Rog3rSm1th\n".format(version=self.version) + Colors.ENDC)

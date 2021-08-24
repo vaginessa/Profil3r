@@ -5,7 +5,7 @@ from pathlib import Path
 
 class Core(object):
 
-    from ._menu import menu
+    from ._menu import services_menu, separators_menu
     from ._permutations import get_permutations
     from ._results import print_results
     from ._run import run
@@ -14,10 +14,11 @@ class Core(object):
     from ._logo import print_logo
     from ._argparse import parse_arguments
     from ._config import load_config
+    from ._filter import filter
 
     def __init__(self, config_path):
         self.config_path = config_path
-        self.version = "1.4.8" 
+        self.version = "1.5.0" 
         self.separators = []
         self.result = {}
         self.permutations_list = []
