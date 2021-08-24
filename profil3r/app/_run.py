@@ -15,10 +15,10 @@ def run(self):
 
     if modules:
         # Number of permutations to test per service
-        print(Colors.BOLD + "[+]" + Colors.ENDC + " {} permutations to test for each service, you can reduce this number by selecting less options if it takes too long".format(len(self.permutations_list)))
+        print("{} permutations to test for each service, you can reduce this number by selecting less options if it takes too long".format(len(self.permutations_list)))
 
         # List of services that profil3r will search
-        print("\n" + "Profil3r will search : \n " + Colors.BOLD + "[+] " + Colors.ENDC +  "{} \n".format(str('\n ' + Colors.BOLD + "[+] " + Colors.ENDC).join(modules)))
+        print("\n" + "Profil3r will search : \n ➜ {} \n".format(str("\n ➜ ").join(modules)))
 
         for module in modules:
             thread = threading.Thread(target=self.modules[module]["method"])
